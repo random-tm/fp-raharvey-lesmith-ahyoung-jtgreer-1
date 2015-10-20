@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */; };
+		84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C6F1BD5C16100A3FD43 /* ViewController.swift */; };
+		84A93C731BD5C16100A3FD43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C711BD5C16100A3FD43 /* Main.storyboard */; };
+		84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C741BD5C16100A3FD43 /* Assets.xcassets */; };
+		84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */; };
+		84A93C831BD5C16100A3FD43 /* PasswordGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* PasswordGeneratorTests.swift */; };
+		84A93C8E1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84A93C7F1BD5C16100A3FD43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A93C621BD5C16100A3FD43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A93C691BD5C16100A3FD43;
+			remoteInfo = PasswordGenerator;
+		};
+		84A93C8A1BD5C16100A3FD43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A93C621BD5C16100A3FD43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A93C691BD5C16100A3FD43;
+			remoteInfo = PasswordGenerator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84A93C6F1BD5C16100A3FD43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A93C721BD5C16100A3FD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84A93C741BD5C16100A3FD43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84A93C771BD5C16100A3FD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84A93C791BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A93C7E1BD5C16100A3FD43 /* PasswordGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A93C821BD5C16100A3FD43 /* PasswordGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorTests.swift; sourceTree = "<group>"; };
+		84A93C841BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorUITests.swift; sourceTree = "<group>"; };
+		84A93C8F1BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A93C671BD5C16100A3FD43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C7B1BD5C16100A3FD43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C861BD5C16100A3FD43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84A93C611BD5C16100A3FD43 = {
+			isa = PBXGroup;
+			children = (
+				84A93C6C1BD5C16100A3FD43 /* PasswordGenerator */,
+				84A93C811BD5C16100A3FD43 /* PasswordGeneratorTests */,
+				84A93C8C1BD5C16100A3FD43 /* PasswordGeneratorUITests */,
+				84A93C6B1BD5C16100A3FD43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84A93C6B1BD5C16100A3FD43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */,
+				84A93C7E1BD5C16100A3FD43 /* PasswordGeneratorTests.xctest */,
+				84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A93C6C1BD5C16100A3FD43 /* PasswordGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */,
+				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
+				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
+				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
+				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
+				84A93C791BD5C16100A3FD43 /* Info.plist */,
+			);
+			path = PasswordGenerator;
+			sourceTree = "<group>";
+		};
+		84A93C811BD5C16100A3FD43 /* PasswordGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				84A93C821BD5C16100A3FD43 /* PasswordGeneratorTests.swift */,
+				84A93C841BD5C16100A3FD43 /* Info.plist */,
+			);
+			path = PasswordGeneratorTests;
+			sourceTree = "<group>";
+		};
+		84A93C8C1BD5C16100A3FD43 /* PasswordGeneratorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */,
+				84A93C8F1BD5C16100A3FD43 /* Info.plist */,
+			);
+			path = PasswordGeneratorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A93C691BD5C16100A3FD43 /* PasswordGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A93C921BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGenerator" */;
+			buildPhases = (
+				84A93C661BD5C16100A3FD43 /* Sources */,
+				84A93C671BD5C16100A3FD43 /* Frameworks */,
+				84A93C681BD5C16100A3FD43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasswordGenerator;
+			productName = PasswordGenerator;
+			productReference = 84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A93C7D1BD5C16100A3FD43 /* PasswordGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A93C951BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGeneratorTests" */;
+			buildPhases = (
+				84A93C7A1BD5C16100A3FD43 /* Sources */,
+				84A93C7B1BD5C16100A3FD43 /* Frameworks */,
+				84A93C7C1BD5C16100A3FD43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A93C801BD5C16100A3FD43 /* PBXTargetDependency */,
+			);
+			name = PasswordGeneratorTests;
+			productName = PasswordGeneratorTests;
+			productReference = 84A93C7E1BD5C16100A3FD43 /* PasswordGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84A93C881BD5C16100A3FD43 /* PasswordGeneratorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A93C981BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGeneratorUITests" */;
+			buildPhases = (
+				84A93C851BD5C16100A3FD43 /* Sources */,
+				84A93C861BD5C16100A3FD43 /* Frameworks */,
+				84A93C871BD5C16100A3FD43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A93C8B1BD5C16100A3FD43 /* PBXTargetDependency */,
+			);
+			name = PasswordGeneratorUITests;
+			productName = PasswordGeneratorUITests;
+			productReference = 84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A93C621BD5C16100A3FD43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Rachel Harvey";
+				TargetAttributes = {
+					84A93C691BD5C16100A3FD43 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					84A93C7D1BD5C16100A3FD43 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 84A93C691BD5C16100A3FD43;
+					};
+					84A93C881BD5C16100A3FD43 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 84A93C691BD5C16100A3FD43;
+					};
+				};
+			};
+			buildConfigurationList = 84A93C651BD5C16100A3FD43 /* Build configuration list for PBXProject "PasswordGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84A93C611BD5C16100A3FD43;
+			productRefGroup = 84A93C6B1BD5C16100A3FD43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A93C691BD5C16100A3FD43 /* PasswordGenerator */,
+				84A93C7D1BD5C16100A3FD43 /* PasswordGeneratorTests */,
+				84A93C881BD5C16100A3FD43 /* PasswordGeneratorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A93C681BD5C16100A3FD43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */,
+				84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */,
+				84A93C731BD5C16100A3FD43 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C7C1BD5C16100A3FD43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C871BD5C16100A3FD43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A93C661BD5C16100A3FD43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */,
+				84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C7A1BD5C16100A3FD43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A93C831BD5C16100A3FD43 /* PasswordGeneratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A93C851BD5C16100A3FD43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A93C8E1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84A93C801BD5C16100A3FD43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A93C691BD5C16100A3FD43 /* PasswordGenerator */;
+			targetProxy = 84A93C7F1BD5C16100A3FD43 /* PBXContainerItemProxy */;
+		};
+		84A93C8B1BD5C16100A3FD43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A93C691BD5C16100A3FD43 /* PasswordGenerator */;
+			targetProxy = 84A93C8A1BD5C16100A3FD43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84A93C711BD5C16100A3FD43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A93C721BD5C16100A3FD43 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A93C771BD5C16100A3FD43 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84A93C901BD5C16100A3FD43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A93C911BD5C16100A3FD43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A93C931BD5C16100A3FD43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PasswordGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84A93C941BD5C16100A3FD43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PasswordGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84A93C961BD5C16100A3FD43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PasswordGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordGenerator.app/PasswordGenerator";
+			};
+			name = Debug;
+		};
+		84A93C971BD5C16100A3FD43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PasswordGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordGenerator.app/PasswordGenerator";
+			};
+			name = Release;
+		};
+		84A93C991BD5C16100A3FD43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PasswordGeneratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PasswordGenerator;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		84A93C9A1BD5C16100A3FD43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PasswordGeneratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CS222.group13.PasswordGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PasswordGenerator;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A93C651BD5C16100A3FD43 /* Build configuration list for PBXProject "PasswordGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A93C901BD5C16100A3FD43 /* Debug */,
+				84A93C911BD5C16100A3FD43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A93C921BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A93C931BD5C16100A3FD43 /* Debug */,
+				84A93C941BD5C16100A3FD43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84A93C951BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A93C961BD5C16100A3FD43 /* Debug */,
+				84A93C971BD5C16100A3FD43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84A93C981BD5C16100A3FD43 /* Build configuration list for PBXNativeTarget "PasswordGeneratorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A93C991BD5C16100A3FD43 /* Debug */,
+				84A93C9A1BD5C16100A3FD43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84A93C621BD5C16100A3FD43 /* Project object */;
+}
