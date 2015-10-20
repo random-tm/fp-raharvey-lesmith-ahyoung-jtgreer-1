@@ -14,6 +14,8 @@
 		84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */; };
 		84A93C831BD5C16100A3FD43 /* PasswordGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* PasswordGeneratorTests.swift */; };
 		84A93C8E1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */; };
+		84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */; settings = {ASSET_TAGS = (); }; };
+		84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorUITests.swift; sourceTree = "<group>"; };
 		84A93C8F1BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePassword.swift; sourceTree = "<group>"; };
+		84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */,
 				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
+				84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */,
+				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
@@ -255,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */,
+				84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */,
 				84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */,
 				84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */,
 			);

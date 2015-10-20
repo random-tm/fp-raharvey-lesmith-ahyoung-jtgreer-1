@@ -1,0 +1,18 @@
+//
+//  SecurePassword.swift
+//  PasswordGenerator
+//
+//  Created by admin on 10/19/15.
+//  Copyright © 2015 Rachel Harvey. All rights reserved.
+//
+
+import Foundation
+
+class SecurePassword {
+    
+    var password = String()
+    
+    init(length: Int) {
+        self.password = "secure"
+    }
+}

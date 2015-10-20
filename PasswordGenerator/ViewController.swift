@@ -10,14 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var generatedPasswordLabel: UILabel!
+    var passwordLength: Int = 12
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.generatedPasswordLabel.text = " "
+    }
+    
+    @IBAction func secureButtonPushed() {
+        let secure = SecurePassword(length: self.passwordLength)
+        self.generatedPasswordLabel.text = secure.password
+    }
+    
+    @IBAction func memorableButtonPushed() {
+        let memorable = MemorablePassword(length: self.passwordLength)
+        self.generatedPasswordLabel.text = memorable.password
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
