@@ -10,9 +10,19 @@ import Foundation
 
 class SecurePassword {
     
-    var password = String()
+    var password: String! = nil
     
     init(length: Int) {
-        self.password = "secure"
+        self.password = self.generateRandomPassword(length)
+    }
+    
+    func generateRandomPassword(length: Int) -> String {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        var randomString: String = ""
+        for _ in 0..<length {
+            let randomNum = Int(arc4random_uniform(UInt32(characters.characters.count)))
+            randomString += String(characters[characters.startIndex.advancedBy(randomNum)])
+        }
+        return randomString
     }
 }

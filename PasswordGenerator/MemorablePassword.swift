@@ -10,7 +10,7 @@ import Foundation
 
 class MemorablePassword {
     
-    var password = String()
+    var password: String! = nil
     
     init(length: Int) {
         self.password = "memorable"

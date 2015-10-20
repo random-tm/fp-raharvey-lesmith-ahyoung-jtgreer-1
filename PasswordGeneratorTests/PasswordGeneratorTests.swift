@@ -13,24 +13,27 @@ class PasswordGeneratorTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRandomPasswordIsNotNil() {
+        let randomPassword = SecurePassword(length: 12)
+        XCTAssert(randomPassword.password != nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testRandomGenerationLength() {
+        let randomPassword = SecurePassword(length: 12)
+        XCTAssert(randomPassword.password.characters.count == 12)
+        
+    }
+    
+    func testTwoRandomPasswordsAreNotEqual() {
+        let randomOne = SecurePassword(length: 12)
+        let randomTwo = SecurePassword(length: 12)
+        XCTAssert(randomOne.password != randomTwo.password)
     }
     
 }
