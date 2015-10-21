@@ -33,11 +33,13 @@ class ViewController: UIViewController {
     }
     
     func longPressed() {
-        let stringToCopy = self.generatedPasswordLabel.text
-        if stringToCopy != " " && stringToCopy != nil {
-            let pasteBoard = UIPasteboard.generalPasteboard()
-            pasteBoard.string = stringToCopy
-            presentCopiedAlert()
+        if self.longPressRecognizer.state == .Began {
+            let stringToCopy = self.generatedPasswordLabel.text
+            if stringToCopy != " " && stringToCopy != nil {
+                let pasteBoard = UIPasteboard.generalPasteboard()
+                pasteBoard.string = stringToCopy
+                presentCopiedAlert()
+            }
         }
     }
     
