@@ -13,6 +13,7 @@ class MemorablePassword {
     var password: String! = nil
     
     init(length: Int) {
-        self.password = "memorable"
+        let randomWord = RandomWord(length: 12)
+        self.password = randomWord.getRandomWord(9)
     }
 }
