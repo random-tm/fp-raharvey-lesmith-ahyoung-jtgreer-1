@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         if stringToCopy != " " && stringToCopy != nil {
             let pasteBoard = UIPasteboard.generalPasteboard()
             pasteBoard.string = stringToCopy
+            let alertController = UIAlertController(title: "Copied", message:
+                "Copied Password to Clipboard!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 
