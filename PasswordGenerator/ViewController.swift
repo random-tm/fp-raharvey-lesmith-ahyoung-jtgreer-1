@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var generatedPasswordLabel: UILabel!
+    let longPressRecognizer = UILongPressGestureRecognizer()
     var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.generatedPasswordLabel.text = " "
+        self.longPressRecognizer.addTarget(self, action: "longPressedView")
+        self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
+        self.generatedPasswordLabel.userInteractionEnabled = true
     }
     
     @IBAction func secureButtonPushed() {
@@ -26,6 +30,10 @@ class ViewController: UIViewController {
     @IBAction func memorableButtonPushed() {
         let memorable = MemorablePassword(length: self.passwordLength)
         self.generatedPasswordLabel.text = memorable.password
+    }
+    
+    func longPressedView() {
+        print("long press gesture recognized")
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,6 +24,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GeneratedPasswordLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzq-L4-7EZ">
                                 <rect key="frame" x="168" y="290" width="265" height="20"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -50,6 +51,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="8" id="CbV-nj-hEb"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="8" id="DgG-iH-0Ja"/>
