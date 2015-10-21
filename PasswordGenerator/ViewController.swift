@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.generatedPasswordLabel.text = " "
-        self.longPressRecognizer.addTarget(self, action: "longPressedView")
+        self.longPressRecognizer.addTarget(self, action: "longPressed")
         self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
         self.generatedPasswordLabel.userInteractionEnabled = true
     }
@@ -32,8 +32,12 @@ class ViewController: UIViewController {
         self.generatedPasswordLabel.text = memorable.password
     }
     
-    func longPressedView() {
-        print("long press gesture recognized")
+    func longPressed() {
+        let stringToCopy = self.generatedPasswordLabel.text
+        if stringToCopy != " " && stringToCopy != nil {
+            let pasteBoard = UIPasteboard.generalPasteboard()
+            pasteBoard.string = stringToCopy
+        }
     }
 
     override func didReceiveMemoryWarning() {
