@@ -9,7 +9,7 @@
 import XCTest
 @testable import PasswordGenerator
 
-class PasswordGeneratorTests: XCTestCase {
+class RandomPasswordTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -19,20 +19,20 @@ class PasswordGeneratorTests: XCTestCase {
         super.tearDown()
     }
     func testRandomPasswordIsNotNil() {
-        let randomPassword = SecurePassword(length: 12)
-        XCTAssert(randomPassword.password != nil)
+        let password = SecurePassword(length: 12)
+        XCTAssert(password.password != nil)
     }
     
     func testRandomGenerationLength() {
-        let randomPassword = SecurePassword(length: 12)
-        XCTAssert(randomPassword.password.characters.count == 12)
+        let password = SecurePassword(length: 12)
+        XCTAssert(password.password.characters.count == 12)
         
     }
     
     func testTwoRandomPasswordsAreNotEqual() {
-        let randomOne = SecurePassword(length: 12)
-        let randomTwo = SecurePassword(length: 12)
-        XCTAssert(randomOne.password != randomTwo.password)
+        let passwordOne = SecurePassword(length: 12)
+        let passwordTwo = SecurePassword(length: 12)
+        XCTAssert(passwordOne.password != passwordTwo.password)
     }
     
 }
