@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var generatedPasswordLabel: UILabel!
+    @IBOutlet weak var secureButton: UIButton!
+    @IBOutlet weak var memorableButton: UIButton!
+    
     let longPressRecognizer = UILongPressGestureRecognizer()
     var passwordLength: Int = 12
     
@@ -20,6 +23,12 @@ class ViewController: UIViewController {
         self.longPressRecognizer.addTarget(self, action: "longPressed")
         self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
         self.generatedPasswordLabel.userInteractionEnabled = true
+        
+        self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
+        self.secureButton.layer.borderWidth = 0.5
+        self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
+        self.memorableButton.layer.borderWidth = 0.5
+        
     }
     
     @IBAction func secureButtonPushed() {

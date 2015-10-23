@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QR-4a-BhA">
-                                <rect key="frame" x="186" y="262" width="229" height="20"/>
+                                <rect key="frame" x="186" y="254" width="229" height="20"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -30,9 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-2t-nkk">
-                                <rect key="frame" x="192" y="318" width="217" height="27"/>
+                                <rect key="frame" x="183" y="334" width="235" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                <state key="normal" title="Generate Secure Password">
+                                <state key="normal" title=" Generate Secure Password ">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -40,9 +40,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZd-4s-r2n">
-                                <rect key="frame" x="178" y="353" width="244" height="27"/>
+                                <rect key="frame" x="169" y="377" width="262" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                <state key="normal" title="Generate Memorable Password">
+                                <state key="normal" title=" Generate Memorable Password ">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -53,9 +53,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="8" id="CbV-nj-hEb"/>
-                            <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="8" id="DgG-iH-0Ja"/>
-                            <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="8" id="Ejh-jM-bCi"/>
+                            <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="16" id="CbV-nj-hEb"/>
+                            <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="24" id="DgG-iH-0Ja"/>
+                            <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="16" id="Ejh-jM-bCi"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T20-fB-cB6"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gkt-cG-huT"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njs-QB-Dy5"/>
@@ -65,6 +65,8 @@
                     </view>
                     <connections>
                         <outlet property="generatedPasswordLabel" destination="Vzq-L4-7EZ" id="Jx9-a4-Udd"/>
+                        <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
+                        <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
