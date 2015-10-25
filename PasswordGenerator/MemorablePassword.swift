@@ -14,7 +14,6 @@ class MemorablePassword {
     
     init(length: Int) {
         let randomWord = RandomWord(length: 8)
-        //self.password = randomWord.getRandomWord({})
         randomWord.getRandomWord({ (word : String) in
             self.password = word;
             let randomWord2Length: Int = 12 - self.password.characters.count

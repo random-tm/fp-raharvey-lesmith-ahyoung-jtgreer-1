@@ -14,7 +14,6 @@ class RandomWord {
     
     init(length: Int){
         self.maxLength = length
-        //getRandomWord()
     }
     
     func getRandomWord(completion:(word: String)->()) -> Void {
@@ -37,6 +36,5 @@ class RandomWord {
             }
         }
         task.resume()
-        //return word
     }
 }
