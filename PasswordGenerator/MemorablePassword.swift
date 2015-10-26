@@ -13,9 +13,10 @@ class MemorablePassword {
     var password:String! = nil
     var randomWordGeneratorOne:RandomWord! = nil
     var randomWordGeneratorTwo:RandomWord! = nil
-    let maxLength:Int! = nil
+    var maxLength:Int! = nil
     
     init(length: Int) {
+        self.maxLength = length
         self.randomWordGeneratorOne = RandomWord(length: 8)
     }
 
