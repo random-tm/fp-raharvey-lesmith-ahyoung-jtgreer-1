@@ -11,18 +11,28 @@ import Foundation
 class SecurePassword {
     
     var password: String! = nil
+    var length: Int! = nil
     
     init(length: Int) {
-        self.password = self.generateRandomPassword(length)
+        self.length = length
     }
     
-    func generateRandomPassword(length: Int) -> String {
-        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    func generateRandomPassword() -> String {
         var randomString: String = ""
-        for _ in 0..<length {
-            let randomNum = Int(arc4random_uniform(UInt32(characters.characters.count)))
-            randomString += String(characters[characters.startIndex.advancedBy(randomNum)])
+        for _ in 0..<self.length {
+            randomString += self.getRandomCharacter()
         }
         return randomString
+    }
+    
+    func getRandomCharacter() -> String {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        let randomNum = Int(arc4random_uniform(UInt32(characters.characters.count)))
+        return String(characters[characters.startIndex.advancedBy(randomNum)])
+    }
+    
+    func getRandomPassword() -> String! {
+        self.password = self.generateRandomPassword()
+        return self.password
     }
 }

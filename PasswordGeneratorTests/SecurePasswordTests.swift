@@ -20,19 +20,19 @@ class RandomPasswordTests: XCTestCase {
     }
     func testRandomPasswordIsNotNil() {
         let password = SecurePassword(length: 12)
-        XCTAssert(password.password != nil)
+        XCTAssert(password.getRandomPassword() != nil)
     }
     
     func testRandomGenerationLength() {
         let password = SecurePassword(length: 12)
-        XCTAssert(password.password.characters.count == 12)
+        XCTAssert(password.getRandomPassword().characters.count == 12)
         
     }
     
     func testTwoRandomPasswordsAreNotEqual() {
         let passwordOne = SecurePassword(length: 12)
         let passwordTwo = SecurePassword(length: 12)
-        XCTAssert(passwordOne.password != passwordTwo.password)
+        XCTAssert(passwordOne.getRandomPassword() != passwordTwo.password)
     }
     
 }
