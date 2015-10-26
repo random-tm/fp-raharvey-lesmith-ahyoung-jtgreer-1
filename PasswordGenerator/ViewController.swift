@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     @IBAction func memorableButtonPushed() {
         generatedPassword()
         let memorable = MemorablePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = memorable.password
+        self.generatedPasswordLabel.text = memorable.getRandomWord()
     }
     
     func longPressed() {
