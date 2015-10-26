@@ -11,16 +11,20 @@ import Foundation
 class MemorablePassword {
     
     var password: String! = nil
+    var randomWordOne: RandomWord! = nil
     
     init(length: Int) {
-        let randomWord = RandomWord(length: 8)
-        randomWord.getRandomWord({ (word : String) in
-            let randomWord2Length: Int = 12 - word.characters.count
-            let randomWord2 = RandomWord(length: randomWord2Length)
-            randomWord2.getRandomWord({ (word2 : String) in
+        self.randomWordOne = RandomWord(length: 8)
+    }
+
+    func getRandomWord() -> String{
+        self.randomWordOne.getRandomWord({ (word : String) in
+            let randomWordTwoLength: Int = 12 - word.characters.count
+            let randomWordTwo = RandomWord(length: randomWordTwoLength)
+            randomWordTwo.getRandomWord({ (word2 : String) in
                 self.password = word + word2
             })
         })
+        return self.password
     }
-
 }
