@@ -13,7 +13,7 @@
 		84A93C731BD5C16100A3FD43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C711BD5C16100A3FD43 /* Main.storyboard */; };
 		84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C741BD5C16100A3FD43 /* Assets.xcassets */; };
 		84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */; };
-		84A93C831BD5C16100A3FD43 /* RandomPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* RandomPasswordTests.swift */; };
+		84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */; };
 		84A93C8E1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */; };
 		84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */; settings = {ASSET_TAGS = (); }; };
 		84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,7 +46,7 @@
 		84A93C771BD5C16100A3FD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84A93C791BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A93C7E1BD5C16100A3FD43 /* PasswordGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84A93C821BD5C16100A3FD43 /* RandomPasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPasswordTests.swift; sourceTree = "<group>"; };
+		84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurePasswordTests.swift; sourceTree = "<group>"; };
 		84A93C841BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C8D1BD5C16100A3FD43 /* PasswordGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorUITests.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		84A93C811BD5C16100A3FD43 /* PasswordGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
-				84A93C821BD5C16100A3FD43 /* RandomPasswordTests.swift */,
+				84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */,
 				84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */,
 				84A93C841BD5C16100A3FD43 /* Info.plist */,
 			);
@@ -275,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A93C831BD5C16100A3FD43 /* RandomPasswordTests.swift in Sources */,
+				84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */,
 				84A2B5951BD9A2E000AC1FE9 /* MemorablePasswordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
