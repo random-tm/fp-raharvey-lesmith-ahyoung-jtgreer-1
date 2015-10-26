@@ -65,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="generatedPasswordLabel" destination="Vzq-L4-7EZ" id="Jx9-a4-Udd"/>
+                        <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
                         <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
                     </connections>
