@@ -10,7 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak var generatedPasswordLabel: UILabel!
+    @IBOutlet weak var secureButton: UIButton!
+    @IBOutlet weak var memorableButton: UIButton!
+    
+    var passwordWasGenerated = false
     let longPressRecognizer = UILongPressGestureRecognizer()
     var passwordLength: Int = 12
     
@@ -20,14 +25,24 @@ class ViewController: UIViewController {
         self.longPressRecognizer.addTarget(self, action: "longPressed")
         self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
         self.generatedPasswordLabel.userInteractionEnabled = true
+        
+        self.labelDenotingGeneratedPassword.hidden = true
+        
+        self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
+        self.secureButton.layer.borderWidth = 0.5
+        self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
+        self.memorableButton.layer.borderWidth = 0.5
+        
     }
     
     @IBAction func secureButtonPushed() {
+        generatedPassword()
         let secure = SecurePassword(length: self.passwordLength)
         self.generatedPasswordLabel.text = secure.password
     }
     
     @IBAction func memorableButtonPushed() {
+        generatedPassword()
         let memorable = MemorablePassword(length: self.passwordLength)
         self.generatedPasswordLabel.text = memorable.password
     }
@@ -49,6 +64,11 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
         
+    }
+    
+    func generatedPassword() {
+        self.passwordWasGenerated = true
+        self.labelDenotingGeneratedPassword.hidden = false
     }
 
     override func didReceiveMemoryWarning() {
