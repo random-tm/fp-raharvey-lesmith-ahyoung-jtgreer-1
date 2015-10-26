@@ -11,6 +11,7 @@ import Foundation
 class RandomWord {
     
     let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
+    let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
     let maxLength: Int
     var request:NSMutableURLRequest! = nil
     
@@ -19,13 +20,12 @@ class RandomWord {
     }
     
     func getRandomWord(completion:(word: String)->()) -> Void {
-        
-        let getURL:NSURL = NSURL(string: "https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=" + String(self.maxLength)+"&lettersmin=1")!
+        let getURL:NSURL = getRequestUrl()
         setRequest(getURL)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
             if error != nil {
-                
+                completion(word: "Network Error")
             } else {
                 let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
                 let word = json["word"] as! String
@@ -33,6 +33,11 @@ class RandomWord {
             }
         }
         task.resume()
+    }
+    
+    func getRequestUrl() -> NSURL{
+        let query:String = "?random=true&lettersMax=" + String(self.maxLength)+"&lettersmin=1"
+        return NSURL(string: apiUrl + query)!
     }
     
     func setRequest(getURL: NSURL) -> Void{
