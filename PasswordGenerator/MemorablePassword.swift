@@ -10,24 +10,25 @@ import Foundation
 
 class MemorablePassword {
     
-    var password: String! = nil
-    var randomWordOne: RandomWord! = nil
-    var randomWordTwo: RandomWord! = nil
+    var password:String! = nil
+    var randomWordGeneratorOne:RandomWord! = nil
+    var randomWordGeneratorTwo:RandomWord! = nil
+    let maxLength:Int! = nil
     
     init(length: Int) {
-        self.randomWordOne = RandomWord(length: 8)
+        self.randomWordGeneratorOne = RandomWord(length: 8)
     }
 
     func getRandomWord() -> String{
-        let word = self.randomWordOne.getRandomWord()
-        self.randomWordTwo = self.initRandomWordWithLengthDifference(word, length: 12)
-        let word2 = self.randomWordTwo.getRandomWord()
+        let word = self.randomWordGeneratorOne.getRandomWord()
+        self.randomWordGeneratorTwo = self.initRandomWordWithLengthDifference(word)
+        let word2 = self.randomWordGeneratorTwo.getRandomWord()
         self.password = word + word2
         return self.password
     }
     
-    func initRandomWordWithLengthDifference(word: String, length: Int) -> RandomWord{
-        let randomWordTwoLength: Int = length - getStringLength(word)
+    func initRandomWordWithLengthDifference(word: String) -> RandomWord{
+        let randomWordTwoLength:Int = self.maxLength - getStringLength(word)
         return RandomWord(length: randomWordTwoLength)
     }
     
