@@ -15,7 +15,6 @@ class SecurePassword {
     
     init(length: Int) {
         self.length = length
-        self.password = self.generateRandomPassword()
     }
     
     func generateRandomPassword() -> String {
@@ -30,5 +29,10 @@ class SecurePassword {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
         let randomNum = Int(arc4random_uniform(UInt32(characters.characters.count)))
         return String(characters[characters.startIndex.advancedBy(randomNum)])
+    }
+    
+    func getRandomPassword() -> String! {
+        self.password = self.generateRandomPassword()
+        return self.password
     }
 }
