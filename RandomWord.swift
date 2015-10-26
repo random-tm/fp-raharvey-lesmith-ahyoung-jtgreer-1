@@ -19,20 +19,30 @@ class RandomWord {
         self.maxLength = length
     }
     
-    func getRandomWord(completion:(word: String)->()) -> Void {
+    func getRandomWord() -> String {
         let getURL:NSURL = getRequestUrl()
         setRequest(getURL)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        var word:String! = nil
+        let semaphore = dispatch_semaphore_create(0)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(self.request) {
             data, response, error in
             if error != nil {
-                completion(word: "Network Error")
+                word = "Network Error"
             } else {
-                let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
-                let word = json["word"] as! String
-                completion(word: word);
+                let json = self.parseJson(data!)
+                word = json["word"] as! String
+                //completion(word: word);
             }
+            dispatch_semaphore_signal(semaphore)
         }
         task.resume()
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return word
+    }
+    
+    func parseJson(data: NSData) -> NSDictionary{
+        let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+        return json as! NSDictionary
     }
     
     func getRequestUrl() -> NSURL{

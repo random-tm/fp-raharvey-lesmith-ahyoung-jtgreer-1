@@ -19,12 +19,10 @@ class MemorablePassword {
     }
 
     func getRandomWord() -> String{
-        self.randomWordOne.getRandomWord({ (word : String) in
-            self.randomWordTwo = self.initRandomWordWithLengthDifference(word, length: 12)
-            self.randomWordTwo.getRandomWord({ (word2 : String) in
-                self.password = word + word2
-            })
-        })
+        let word = self.randomWordOne.getRandomWord()
+        self.randomWordTwo = self.initRandomWordWithLengthDifference(word, length: 12)
+        let word2 = self.randomWordTwo.getRandomWord()
+        self.password = word + word2
         return self.password
     }
     
