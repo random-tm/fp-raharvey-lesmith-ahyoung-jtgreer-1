@@ -31,7 +31,6 @@ class RandomWord {
             } else {
                 let json = self.parseJson(data!)
                 word = json["word"] as! String
-                //completion(word: word);
             }
             dispatch_semaphore_signal(semaphore)
         }
