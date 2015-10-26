@@ -29,8 +29,11 @@ class MemorablePassword {
     }
     
     func initRandomWordWithLengthDifference(word: String, length: Int) -> RandomWord{
-        let randomWordTwoLength: Int = length - word.characters.count
+        let randomWordTwoLength: Int = length - getStringLength(word)
         return RandomWord(length: randomWordTwoLength)
     }
     
+    func getStringLength(string : String) -> Int{
+        return string.characters.count
+    }
 }
