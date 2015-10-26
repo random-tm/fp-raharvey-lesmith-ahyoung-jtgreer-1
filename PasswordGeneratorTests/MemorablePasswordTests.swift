@@ -18,9 +18,21 @@ class MemorablePasswordTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
     func testMemorablePasswordIsNotNil() {
         let password = MemorablePassword(length: 12)
-        XCTAssert(password.password != nil)
+        XCTAssert(password.getRandomWord() != nil)
+    }
+    
+    func testMemorableGenerationLength() {
+        let password = MemorablePassword(length: 12)
+        XCTAssert(password.getRandomWord().characters.count == 12)
+    }
+    
+    func testTwoMemorablePasswordAreNotEqual() {
+        let passwordOne = MemorablePassword(length: 12)
+        let passwordTwo = MemorablePassword(length: 12)
+        XCTAssert(passwordOne.getRandomWord() != passwordTwo.getRandomWord())
     }
     
 }

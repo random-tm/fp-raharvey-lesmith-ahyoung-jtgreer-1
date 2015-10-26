@@ -20,7 +20,7 @@ class MemorablePassword {
         self.randomWordGeneratorOne = RandomWord(length: 8)
     }
 
-    func getRandomWord() -> String{
+    func getRandomWord() -> String!{
         let word = getWordWithoutSpaces(randomWordGeneratorOne)
         self.randomWordGeneratorTwo = self.initRandomWordWithLengthDifference(word)
         let word2 = getWordWithoutSpaces(randomWordGeneratorTwo)
