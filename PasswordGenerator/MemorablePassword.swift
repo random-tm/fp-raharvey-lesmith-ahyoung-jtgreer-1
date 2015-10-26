@@ -12,6 +12,7 @@ class MemorablePassword {
     
     var password: String! = nil
     var randomWordOne: RandomWord! = nil
+    var randomWordTwo: RandomWord! = nil
     
     init(length: Int) {
         self.randomWordOne = RandomWord(length: 8)
@@ -19,12 +20,17 @@ class MemorablePassword {
 
     func getRandomWord() -> String{
         self.randomWordOne.getRandomWord({ (word : String) in
-            let randomWordTwoLength: Int = 12 - word.characters.count
-            let randomWordTwo = RandomWord(length: randomWordTwoLength)
-            randomWordTwo.getRandomWord({ (word2 : String) in
+            self.randomWordTwo = self.initRandomWordWithLengthDifference(word, length: 12)
+            self.randomWordTwo.getRandomWord({ (word2 : String) in
                 self.password = word + word2
             })
         })
         return self.password
     }
+    
+    func initRandomWordWithLengthDifference(word: String, length: Int) -> RandomWord{
+        let randomWordTwoLength: Int = length - word.characters.count
+        return RandomWord(length: randomWordTwoLength)
+    }
+    
 }
