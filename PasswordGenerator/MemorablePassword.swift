@@ -29,8 +29,8 @@ class MemorablePassword {
     }
     
     func getWordWithoutSpaces(randomWordGenerator:RandomWord) -> String{
-        var string = " "
-        while(checkForSpaces(string)){
+        var string = " -"
+        while(checkForSpaces(string) || checkForHypens(string)){
             string = randomWordGenerator.getRandomWord()
         }
         return string
@@ -38,6 +38,14 @@ class MemorablePassword {
     
     func checkForSpaces(string:String) -> Bool{
         if(string.containsString(" ")){
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func checkForHypens(string:String) -> Bool{
+        if(string.containsString("-")){
             return true
         } else {
             return false
