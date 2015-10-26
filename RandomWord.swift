@@ -10,7 +10,9 @@ import Foundation
 
 class RandomWord {
     
+    let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     let maxLength: Int
+    var request:NSMutableURLRequest! = nil
     
     init(length: Int){
         self.maxLength = length
@@ -19,12 +21,7 @@ class RandomWord {
     func getRandomWord(completion:(word: String)->()) -> Void {
         
         let getURL:NSURL = NSURL(string: "https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=" + String(self.maxLength)+"&lettersmin=1")!
-        let request = NSMutableURLRequest(URL: getURL)
-        
-        request.HTTPMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW", forHTTPHeaderField: "X-Mashape-Key")
-        
+        setRequest(getURL)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
             if error != nil {
@@ -36,5 +33,12 @@ class RandomWord {
             }
         }
         task.resume()
+    }
+    
+    func setRequest(getURL: NSURL) -> Void{
+        self.request = NSMutableURLRequest(URL: getURL)
+        self.request.HTTPMethod = "GET"
+        self.request.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.request.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
     }
 }
