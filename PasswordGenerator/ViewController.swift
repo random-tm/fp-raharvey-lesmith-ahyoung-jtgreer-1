@@ -15,47 +15,51 @@ class ViewController: UIViewController {
     @IBOutlet weak private var secureButton: UIButton!
     @IBOutlet weak private var memorableButton: UIButton!
     
-    private var passwordWasGenerated = false
     private let longPressRecognizer = UILongPressGestureRecognizer()
     private var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureGeneratedPasswordLabel()
+        self.labelDenotingGeneratedPassword.hidden = true
+        self.addButtonBorders()
+    }
+    
+    private func configureGeneratedPasswordLabel() {
         self.generatedPasswordLabel.text = " "
         self.longPressRecognizer.addTarget(self, action: "longPressed")
         self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
         self.generatedPasswordLabel.userInteractionEnabled = true
-        
-        self.labelDenotingGeneratedPassword.hidden = true
-        
+    }
+    
+    private func addButtonBorders() {
         self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
         self.secureButton.layer.borderWidth = 0.5
         self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
         self.memorableButton.layer.borderWidth = 0.5
-        
     }
     
-    @IBAction private func secureButtonPushed() {
-        generatedPassword()
-        let secure = SecurePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = secure.getRandomPassword()
-    }
-    
-    @IBAction private func memorableButtonPushed() {
-        generatedPassword()
-        let memorable = MemorablePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = memorable.getRandomWord()
-    }
-    
-    private func longPressed() {
-        if self.longPressRecognizer.state == .Began {
-            let stringToCopy = self.generatedPasswordLabel.text
-            if stringToCopy != " " && stringToCopy != nil {
-                let pasteBoard = UIPasteboard.generalPasteboard()
-                pasteBoard.string = stringToCopy
-                presentCopiedAlert()
-            }
+    func longPressed() {
+        if self.notCopying() {
+            self.copyPassword()
         }
+    }
+    
+    func notCopying() -> Bool {
+        return self.longPressRecognizer.state == .Began
+    }
+    
+    private func copyPassword() {
+        let stringToCopy = self.generatedPasswordLabel.text
+        if self.stringIsCopyable(stringToCopy!) {
+            let pasteBoard = UIPasteboard.generalPasteboard()
+            pasteBoard.string = stringToCopy
+            presentCopiedAlert()
+        }
+    }
+    
+    private func stringIsCopyable(password: String!) -> Bool {
+        return password != " " && password != nil
     }
     
     private func presentCopiedAlert() {
@@ -66,9 +70,16 @@ class ViewController: UIViewController {
         
     }
     
-    private func generatedPassword() {
-        self.passwordWasGenerated = true
+    @IBAction private func secureButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
+        let secure = SecurePassword(length: self.passwordLength)
+        self.generatedPasswordLabel.text = secure.getRandomPassword()
+    }
+    
+    @IBAction private func memorableButtonPushed() {
+        self.labelDenotingGeneratedPassword.hidden = false
+        let memorable = MemorablePassword(length: self.passwordLength)
+        self.generatedPasswordLabel.text = memorable.getRandomWord()
     }
 
     override func didReceiveMemoryWarning() {
