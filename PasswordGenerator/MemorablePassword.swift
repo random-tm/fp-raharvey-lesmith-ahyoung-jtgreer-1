@@ -17,9 +17,9 @@ class MemorablePassword {
     
     init(length: Int) {
         self.maxLength = length
-        self.randomWordGeneratorOne = RandomWord(length: 8)
+        self.randomWordGeneratorOne = RandomWord(maxLength: 8, minLength: 1)
     }
-
+    
     func getRandomWord() -> String!{
         let word = getWordWithoutSpaces(randomWordGeneratorOne)
         self.randomWordGeneratorTwo = self.initRandomWordWithLengthDifference(word)
@@ -60,10 +60,11 @@ class MemorablePassword {
     
     private func initRandomWordWithLengthDifference(word: String) -> RandomWord{
         let randomWordTwoLength:Int = self.maxLength - getStringLength(word)
-        return RandomWord(length: randomWordTwoLength)
+        return RandomWord(maxLength: randomWordTwoLength, minLength: randomWordTwoLength)
     }
     
     private func getStringLength(string : String) -> Int{
+        print(string.characters.count)
         return string.characters.count
     }
 }
