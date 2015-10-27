@@ -10,10 +10,10 @@ import Foundation
 
 class RandomWord {
     
-    let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
-    let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
-    let maxLength: Int
-    var request:NSMutableURLRequest! = nil
+    private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
+    private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
+    private let maxLength: Int
+    private var request:NSMutableURLRequest! = nil
     
     init(length: Int){
         self.maxLength = length
@@ -39,17 +39,17 @@ class RandomWord {
         return word
     }
     
-    func parseJson(data: NSData) -> NSDictionary{
+    private func parseJson(data: NSData) -> NSDictionary{
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
         return json as! NSDictionary
     }
     
-    func getRequestUrl() -> NSURL{
+    private func getRequestUrl() -> NSURL{
         let query:String = "?random=true&lettersMax=" + String(self.maxLength)+"&lettersmin=1"
         return NSURL(string: apiUrl + query)!
     }
     
-    func setRequest(getURL: NSURL) -> Void{
+    private func setRequest(getURL: NSURL) -> Void{
         self.request = NSMutableURLRequest(URL: getURL)
         self.request.HTTPMethod = "GET"
         self.request.setValue("application/json", forHTTPHeaderField: "Accept")
