@@ -105,11 +105,11 @@
 		84A93C6C1BD5C16100A3FD43 /* PasswordGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				846933A61BDEF476004A04C5 /* RandomWord.swift */,
 				84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */,
 				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
 				84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */,
 				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
+				846933A61BDEF476004A04C5 /* RandomWord.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,

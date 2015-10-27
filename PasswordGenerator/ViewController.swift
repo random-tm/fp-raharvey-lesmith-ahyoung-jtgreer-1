@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var labelDenotingGeneratedPassword: UILabel!
-    @IBOutlet weak var generatedPasswordLabel: UILabel!
-    @IBOutlet weak var secureButton: UIButton!
-    @IBOutlet weak var memorableButton: UIButton!
+    @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
+    @IBOutlet weak private var generatedPasswordLabel: UILabel!
+    @IBOutlet weak private var secureButton: UIButton!
+    @IBOutlet weak private var memorableButton: UIButton!
     
-    var passwordWasGenerated = false
-    let longPressRecognizer = UILongPressGestureRecognizer()
-    var passwordLength: Int = 12
+    private var passwordWasGenerated = false
+    private let longPressRecognizer = UILongPressGestureRecognizer()
+    private var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,19 +35,19 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func secureButtonPushed() {
+    @IBAction private func secureButtonPushed() {
         generatedPassword()
         let secure = SecurePassword(length: self.passwordLength)
         self.generatedPasswordLabel.text = secure.getRandomPassword()
     }
     
-    @IBAction func memorableButtonPushed() {
+    @IBAction private func memorableButtonPushed() {
         generatedPassword()
         let memorable = MemorablePassword(length: self.passwordLength)
         self.generatedPasswordLabel.text = memorable.getRandomWord()
     }
     
-    func longPressed() {
+    private func longPressed() {
         if self.longPressRecognizer.state == .Began {
             let stringToCopy = self.generatedPasswordLabel.text
             if stringToCopy != " " && stringToCopy != nil {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func presentCopiedAlert() {
+    private func presentCopiedAlert() {
         let alertController = UIAlertController(title: "Copied", message:
             "Copied Password to Clipboard!", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         
     }
     
-    func generatedPassword() {
+    private func generatedPassword() {
         self.passwordWasGenerated = true
         self.labelDenotingGeneratedPassword.hidden = false
     }

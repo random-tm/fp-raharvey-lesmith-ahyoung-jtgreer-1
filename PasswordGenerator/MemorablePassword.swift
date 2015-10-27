@@ -10,10 +10,10 @@ import Foundation
 
 class MemorablePassword {
     
-    var password:String! = nil
-    var randomWordGeneratorOne:RandomWord! = nil
-    var randomWordGeneratorTwo:RandomWord! = nil
-    var maxLength:Int! = nil
+    private var password:String! = nil
+    private var randomWordGeneratorOne:RandomWord! = nil
+    private var randomWordGeneratorTwo:RandomWord! = nil
+    private var maxLength:Int! = nil
     
     init(length: Int) {
         self.maxLength = length
@@ -28,7 +28,7 @@ class MemorablePassword {
         return self.password
     }
     
-    func getWordWithoutSpaces(randomWordGenerator:RandomWord) -> String{
+    private func getWordWithoutSpaces(randomWordGenerator:RandomWord) -> String{
         var string = " -"
         while(checkForSpaces(string) || checkForHypens(string)){
             string = randomWordGenerator.getRandomWord()
@@ -36,7 +36,7 @@ class MemorablePassword {
         return string
     }
     
-    func checkForSpaces(string:String) -> Bool{
+    private func checkForSpaces(string:String) -> Bool{
         if(string.containsString(" ")){
             return true
         } else {
@@ -44,7 +44,7 @@ class MemorablePassword {
         }
     }
     
-    func checkForHypens(string:String) -> Bool{
+    private func checkForHypens(string:String) -> Bool{
         if(string.containsString("-")){
             return true
         } else {
@@ -52,12 +52,12 @@ class MemorablePassword {
         }
     }
     
-    func initRandomWordWithLengthDifference(word: String) -> RandomWord{
+    private func initRandomWordWithLengthDifference(word: String) -> RandomWord{
         let randomWordTwoLength:Int = self.maxLength - getStringLength(word)
         return RandomWord(length: randomWordTwoLength)
     }
     
-    func getStringLength(string : String) -> Int{
+    private func getStringLength(string : String) -> Int{
         return string.characters.count
     }
 }
