@@ -14,31 +14,40 @@ class RandomWord {
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
     private let maxLength: Int
     private let minLength: Int
-    private var request:NSMutableURLRequest! = nil
+    private var requestHeaders:NSMutableURLRequest! = nil
+    private var word:String! = nil
     
     init(maxLength: Int, minLength: Int){
         self.maxLength = maxLength
         self.minLength = minLength
+        let getURL:NSURL = getRequestUrl()
+        setRequestHeaders(getURL)
     }
     
     func getRandomWord() -> String {
-        let getURL:NSURL = getRequestUrl()
-        setRequest(getURL)
-        var word:String! = nil
         let semaphore = dispatch_semaphore_create(0)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(self.request) {
-            data, response, error in
-            if error != nil {
-                word = "Network Error"
-            } else {
-                let json = self.parseJson(data!)
-                word = json["word"] as! String
-            }
-            dispatch_semaphore_signal(semaphore)
-        }
+        let task = createNetworkTask(semaphore)
         task.resume()
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        return word
+        return self.word
+    }
+    
+    private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask{
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(self.requestHeaders) {
+            data, response, error in
+            self.parseNetworkData(data, error: error)
+            dispatch_semaphore_signal(semaphore)
+        }
+        return task
+    }
+    
+    private func parseNetworkData(data:NSData?, error:NSError?) -> Void{
+        if (error != nil) {
+            self.word = "NetworkError"
+        } else {
+            let json = self.parseJson(data!)
+            self.word = json["word"] as! String
+        }
     }
     
     private func parseJson(data: NSData) -> NSDictionary{
@@ -47,19 +56,30 @@ class RandomWord {
     }
     
     private func getRequestUrl() -> NSURL{
-        var query: String! = nil
-        if self.minLength == self.maxLength {
-            query = "?random=true&letters="+String(self.maxLength)
-        } else {
-            query = "?random=true&lettersMax="+String(self.maxLength)+"&lettersmin="+String(self.minLength)
-        }
+        let query:String = getQuery()
         return NSURL(string: apiUrl + query)!
     }
     
-    private func setRequest(getURL: NSURL) -> Void{
-        self.request = NSMutableURLRequest(URL: getURL)
-        self.request.HTTPMethod = "GET"
-        self.request.setValue("application/json", forHTTPHeaderField: "Accept")
-        self.request.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
+    private func getQuery() -> String{
+        if (minLengthEqualsMaxLength()) {
+            return "?random=true&letters="+String(self.maxLength)
+        } else {
+            return "?random=true&lettersMax="+String(self.maxLength)+"&lettersmin="+String(self.minLength)
+        }
+    }
+    
+    private func minLengthEqualsMaxLength()->Bool{
+        if (self.minLength == self.maxLength) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func setRequestHeaders(getURL: NSURL) -> Void{
+        self.requestHeaders = NSMutableURLRequest(URL: getURL)
+        self.requestHeaders.HTTPMethod = "GET"
+        self.requestHeaders.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
     }
 }

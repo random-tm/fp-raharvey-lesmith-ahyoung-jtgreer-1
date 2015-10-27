@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     @IBAction private func memorableButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
         let memorable = MemorablePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = memorable.getRandomWord()
+        self.generatedPasswordLabel.text = memorable.getRandomWords()
     }
 
     override func didReceiveMemoryWarning() {
