@@ -18,6 +18,7 @@ class RandomPasswordTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
     func testRandomPasswordIsNotNil() {
         let password = SecurePassword(length: 12)
         XCTAssert(password.getRandomPassword() != nil)

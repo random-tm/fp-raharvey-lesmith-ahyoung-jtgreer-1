@@ -21,18 +21,18 @@ class MemorablePasswordTests: XCTestCase {
     
     func testMemorablePasswordIsNotNil() {
         let password = MemorablePassword(length: 12)
-        XCTAssert(password.getRandomWord() != nil)
+        XCTAssert(password.getRandomWords() != nil)
     }
     
     func testMemorableGenerationLength() {
         let password = MemorablePassword(length: 12)
-        XCTAssert(password.getRandomWord().characters.count == 12)
+        XCTAssert(password.getRandomWords().characters.count == 12)
     }
     
     func testTwoMemorablePasswordAreNotEqual() {
         let passwordOne = MemorablePassword(length: 12)
         let passwordTwo = MemorablePassword(length: 12)
-        XCTAssert(passwordOne.getRandomWord() != passwordTwo.getRandomWord())
+        XCTAssert(passwordOne.getRandomWords() != passwordTwo.getRandomWords())
     }
     
 }
