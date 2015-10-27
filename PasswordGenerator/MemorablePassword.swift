@@ -33,7 +33,13 @@ class MemorablePassword {
         while(checkForSpaces(string) || checkForHypens(string)){
             string = randomWordGenerator.getRandomWord()
         }
-        return string
+        return capitalizeFirstLetter(string)
+    }
+    
+    private func capitalizeFirstLetter(string:String) -> String{
+        let firstLetter:String = string.substringToIndex(string.startIndex.advancedBy(1)).capitalizedString
+        let restOfString:String = string.substringFromIndex(string.startIndex.advancedBy(1))
+        return firstLetter + restOfString
     }
     
     private func checkForSpaces(string:String) -> Bool{
