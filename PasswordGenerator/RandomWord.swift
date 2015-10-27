@@ -13,10 +13,12 @@ class RandomWord {
     private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
     private let maxLength: Int
+    private let minLength: Int
     private var request:NSMutableURLRequest! = nil
     
-    init(length: Int){
-        self.maxLength = length
+    init(maxLength: Int, minLength: Int){
+        self.maxLength = maxLength
+        self.minLength = minLength
     }
     
     func getRandomWord() -> String {
@@ -45,7 +47,12 @@ class RandomWord {
     }
     
     private func getRequestUrl() -> NSURL{
-        let query:String = "?random=true&lettersMax=" + String(self.maxLength)+"&lettersmin=1"
+        var query: String! = nil
+        if self.minLength == self.maxLength {
+            query = "?random=true&letters="+String(self.maxLength)
+        } else {
+            query = "?random=true&lettersMax="+String(self.maxLength)+"&lettersmin="+String(self.minLength)
+        }
         return NSURL(string: apiUrl + query)!
     }
     
