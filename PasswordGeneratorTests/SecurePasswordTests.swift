@@ -32,7 +32,7 @@ class RandomPasswordTests: XCTestCase {
     func testTwoRandomPasswordsAreNotEqual() {
         let passwordOne = SecurePassword(length: 12)
         let passwordTwo = SecurePassword(length: 12)
-        XCTAssert(passwordOne.getRandomPassword() != passwordTwo.password)
+        XCTAssert(passwordOne.getRandomPassword() != passwordTwo.getRandomPassword())
     }
     
 }
