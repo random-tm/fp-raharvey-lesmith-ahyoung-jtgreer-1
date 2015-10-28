@@ -28,14 +28,6 @@ class MemorablePassword {
         return self.password
     }
     
-    func checkForPasswordError() -> Bool{
-        if(self.password.rangeOfString("NetworkError") != nil) {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     private func getWordWithoutSpacesOrHypens(randomWordGenerator:RandomWord) -> String{
         var string = randomWordGenerator.getRandomWord()
         while(checkForSpaces(string) || checkForHypens(string)){
@@ -82,4 +74,13 @@ class MemorablePassword {
     private func getStringLength(string : String) -> Int{
         return string.characters.count
     }
+    
+    func checkForPasswordError() -> Bool{
+        if(self.password.rangeOfString("NetworkError") != nil) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }
