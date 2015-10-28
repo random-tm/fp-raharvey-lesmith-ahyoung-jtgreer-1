@@ -25,14 +25,14 @@ class ViewController: UIViewController {
         self.addButtonBorders()
     }
     
-    private func configureGeneratedPasswordLabel() {
+    private func configureGeneratedPasswordLabel() -> Void {
         self.generatedPasswordLabel.text = " "
         self.longPressRecognizer.addTarget(self, action: "longPressed")
         self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
         self.generatedPasswordLabel.userInteractionEnabled = true
     }
     
-    private func addButtonBorders() {
+    private func addButtonBorders() -> Void{
         self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
         self.secureButton.layer.borderWidth = 0.5
         self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         return self.longPressRecognizer.state == .Began
     }
     
-    private func copyPassword() {
+    private func copyPassword() -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard(stringToCopy!)
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func presentCopiedAlert() {
+    private func presentCopiedAlert() -> Void{
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
         alertController = addCopyAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -96,14 +96,14 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    @IBAction private func secureButtonPushed() {
+    @IBAction private func secureButtonPushed() -> Void{
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
         let password = secure.getRandomPassword()
         self.generatedPasswordLabel.text = password
     }
     
-    @IBAction private func memorableButtonPushed() {
+    @IBAction private func memorableButtonPushed() -> Void {
         self.labelDenotingGeneratedPassword.hidden = false
         let memorableGenerator = MemorablePassword(length: self.passwordLength)
         let password = memorableGenerator.getRandomWords()
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func presentErrorAlert() {
+    private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
         alertController = addErrorAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -129,10 +129,6 @@ class ViewController: UIViewController {
         let handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
         alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))
         return alertController
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
 }
