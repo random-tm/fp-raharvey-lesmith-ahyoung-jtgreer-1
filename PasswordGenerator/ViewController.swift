@@ -75,13 +75,27 @@ class ViewController: UIViewController {
     @IBAction private func secureButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = secure.getRandomPassword()
+        let password = secure.getRandomPassword()
+        self.generatedPasswordLabel.text = password
     }
     
     @IBAction private func memorableButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
-        let memorable = MemorablePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = memorable.getRandomWords()
+        let memorableGenerator = MemorablePassword(length: self.passwordLength)
+        let password = memorableGenerator.getRandomWords()
+        if(memorableGenerator.checkForPasswordError()) {
+            self.presentErrorAlert()
+        } else {
+            self.generatedPasswordLabel.text = password
+        }
+    }
+    
+    private func presentErrorAlert() {
+        let alertController = UIAlertController(title: "Error", message:
+            "Sorry, there was an error generating your password!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in self.viewDidLoad()}))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
