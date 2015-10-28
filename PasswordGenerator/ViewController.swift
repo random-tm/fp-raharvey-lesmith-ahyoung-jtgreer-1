@@ -75,14 +75,15 @@ class ViewController: UIViewController {
     @IBAction private func secureButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
-        self.generatedPasswordLabel.text = secure.getRandomPassword()
+        let password = secure.getRandomPassword()
+        self.generatedPasswordLabel.text = password
     }
     
     @IBAction private func memorableButtonPushed() {
         self.labelDenotingGeneratedPassword.hidden = false
         let memorableGenerator = MemorablePassword(length: self.passwordLength)
         let password = memorableGenerator.getRandomWords()
-        if(password.rangeOfString("NetworkError") != nil) {
+        if(memorableGenerator.checkForPasswordError()) {
             self.presentErrorAlert()
         } else {
             self.generatedPasswordLabel.text = password
