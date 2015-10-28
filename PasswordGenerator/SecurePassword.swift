@@ -32,7 +32,20 @@ class SecurePassword {
     
     private func getRandomCharacter() -> String {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-        let randomNum = Int(arc4random_uniform(UInt32(characters.characters.count)))
-        return String(characters[characters.startIndex.advancedBy(randomNum)])
+        let charactersLength = getCharacterCount(characters)
+        let randomNum = getRandomNumberUpto(charactersLength)
+        return String(getCharacter(characters, index: randomNum))
+    }
+    
+    private func getCharacterCount(string: String) -> Int{
+        return string.characters.count
+    }
+    
+    private func getRandomNumberUpto(number:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(number)))
+    }
+    
+    private func getCharacter(string:String, index:Int) -> Character{
+        return string[string.startIndex.advancedBy(index)]
     }
 }
