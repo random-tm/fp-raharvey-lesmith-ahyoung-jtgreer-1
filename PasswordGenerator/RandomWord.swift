@@ -45,6 +45,13 @@ class RandomWord {
         }
     }
     
+    private func setRequestHeaders(getURL: NSURL) -> Void{
+        self.requestHeaders = NSMutableURLRequest(URL: getURL)
+        self.requestHeaders.HTTPMethod = "GET"
+        self.requestHeaders.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
+    }
+    
     func getRandomWord() -> String {
         let semaphore = dispatch_semaphore_create(0)
         let task = createNetworkTask(semaphore)
@@ -75,11 +82,5 @@ class RandomWord {
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
         return json as! NSDictionary
     }
-    
-    private func setRequestHeaders(getURL: NSURL) -> Void{
-        self.requestHeaders = NSMutableURLRequest(URL: getURL)
-        self.requestHeaders.HTTPMethod = "GET"
-        self.requestHeaders.setValue("application/json", forHTTPHeaderField: "Accept")
-        self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
-    }
+
 }
