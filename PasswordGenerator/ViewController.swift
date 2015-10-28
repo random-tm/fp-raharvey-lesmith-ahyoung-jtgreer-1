@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
     @IBOutlet weak private var secureButton: UIButton!
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             copyPasswordToClipboard(stringToCopy!)
         }
     }
-
+    
     private func copyPasswordToClipboard(stringToCopy:String) -> Void{
         let pasteBoard = UIPasteboard.generalPasteboard()
         pasteBoard.string = stringToCopy
@@ -130,10 +130,10 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))
         return alertController
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
 
