@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     func longPressed() {
-        if self.notCopying() {
+        if(self.notCopying()) {
             self.copyPassword()
         }
     }
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     private func copyPassword() {
         let stringToCopy = self.generatedPasswordLabel.text
-        if self.stringIsCopyable(stringToCopy!) {
+        if(self.stringIsCopyable(stringToCopy!)) {
             let pasteBoard = UIPasteboard.generalPasteboard()
             pasteBoard.string = stringToCopy
             presentCopiedAlert()
@@ -59,7 +59,9 @@ class ViewController: UIViewController {
     }
     
     private func stringIsCopyable(password: String!) -> Bool {
-        return password != " " && password != nil
+        let isNotEmpty = password != " "
+        let isNotNil = password != nil
+        return isNotEmpty && isNotNil
     }
     
     private func presentCopiedAlert() {
