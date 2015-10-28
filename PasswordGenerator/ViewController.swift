@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
     @IBOutlet weak private var secureButton: UIButton!
@@ -52,24 +52,48 @@ class ViewController: UIViewController {
     private func copyPassword() {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
-            let pasteBoard = UIPasteboard.generalPasteboard()
-            pasteBoard.string = stringToCopy
-            presentCopiedAlert()
+            copyPasswordToClipboard(stringToCopy!)
         }
     }
     
+    private func copyPasswordToClipboard(stringToCopy:String) -> Void{
+        let pasteBoard = UIPasteboard.generalPasteboard()
+        pasteBoard.string = stringToCopy
+        presentCopiedAlert()
+    }
+    
     private func stringIsCopyable(password: String!) -> Bool {
-        let isNotEmpty = password != " "
-        let isNotNil = password != nil
-        return isNotEmpty && isNotNil
+        if((password != nil) && !stringIsEmpty(password)){
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func stringIsEmpty(string:String) -> Bool{
+        if(string == " "){
+            return true
+        } else {
+            return false
+        }
     }
     
     private func presentCopiedAlert() {
-        let alertController = UIAlertController(title: "Copied", message:
-            "Copied Password to Clipboard!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
+        alertController = addCopyAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
-        
+    }
+    
+    private func createAlertController(title:String, message:String)->UIAlertController{
+        let style = UIAlertControllerStyle.Alert
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        return alertController
+    }
+    
+    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)->UIAlertController{
+        let style = UIAlertActionStyle.Default
+        alertController.addAction(UIAlertAction(title: title, style: style, handler: nil))
+        return alertController
     }
     
     @IBAction private func secureButtonPushed() {
@@ -83,6 +107,10 @@ class ViewController: UIViewController {
         self.labelDenotingGeneratedPassword.hidden = false
         let memorableGenerator = MemorablePassword(length: self.passwordLength)
         let password = memorableGenerator.getRandomWords()
+        self.checkForNetworkError(password, memorableGenerator: memorableGenerator)
+    }
+    
+    private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void{
         if(memorableGenerator.checkForPasswordError()) {
             self.presentErrorAlert()
         } else {
@@ -91,17 +119,21 @@ class ViewController: UIViewController {
     }
     
     private func presentErrorAlert() {
-        let alertController = UIAlertController(title: "Error", message:
-            "Sorry, there was an error generating your password!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in self.viewDidLoad()}))
+        var alertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
+        alertController = addErrorAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
-        
     }
-
+    
+    private func addErrorAlertControllerAction(title:String, alertController:UIAlertController) -> UIAlertController{
+        let style = UIAlertActionStyle.Default
+        let handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
+        alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))
+        return alertController
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
 }
 
