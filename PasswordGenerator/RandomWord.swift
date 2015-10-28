@@ -24,6 +24,27 @@ class RandomWord {
         setRequestHeaders(getURL)
     }
     
+    private func getRequestUrl() -> NSURL{
+        let query:String = getQuery()
+        return NSURL(string: apiUrl + query)!
+    }
+    
+    private func getQuery() -> String{
+        if (minLengthEqualsMaxLength()) {
+            return "?random=true&letters="+String(self.maxLength)
+        } else {
+            return "?random=true&lettersMax="+String(self.maxLength)+"&lettersMin="+String(self.minLength)
+        }
+    }
+    
+    private func minLengthEqualsMaxLength()->Bool{
+        if (self.minLength == self.maxLength) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func getRandomWord() -> String {
         let semaphore = dispatch_semaphore_create(0)
         let task = createNetworkTask(semaphore)
@@ -53,27 +74,6 @@ class RandomWord {
     private func parseJson(data: NSData) -> NSDictionary{
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
         return json as! NSDictionary
-    }
-    
-    private func getRequestUrl() -> NSURL{
-        let query:String = getQuery()
-        return NSURL(string: apiUrl + query)!
-    }
-    
-    private func getQuery() -> String{
-        if (minLengthEqualsMaxLength()) {
-            return "?random=true&letters="+String(self.maxLength)
-        } else {
-            return "?random=true&lettersMax="+String(self.maxLength)+"&lettersmin="+String(self.minLength)
-        }
-    }
-    
-    private func minLengthEqualsMaxLength()->Bool{
-        if (self.minLength == self.maxLength) {
-            return true
-        } else {
-            return false
-        }
     }
     
     private func setRequestHeaders(getURL: NSURL) -> Void{
