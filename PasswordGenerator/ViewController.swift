@@ -119,7 +119,7 @@ class ViewController: UIViewController {
     }
     
     private func presentErrorAlert() -> Void {
-        var alertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
+        var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
         alertController = addErrorAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
