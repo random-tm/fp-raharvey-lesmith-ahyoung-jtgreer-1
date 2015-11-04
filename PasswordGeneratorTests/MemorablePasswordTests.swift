@@ -11,14 +11,6 @@ import XCTest
 
 class MemorablePasswordTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testMemorablePasswordIsNotNil() {
         let password = MemorablePassword(length: 12)
         XCTAssert(password.getRandomWords() != nil)
