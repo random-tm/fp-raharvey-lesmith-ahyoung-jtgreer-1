@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
     @IBOutlet weak private var secureButton: UIButton!
     @IBOutlet weak private var memorableButton: UIButton!
+    @IBOutlet weak private var copyButton: UIButton!
     
     private let longPressRecognizer = UILongPressGestureRecognizer()
     private var passwordLength: Int = 12
@@ -37,12 +38,19 @@ class ViewController: UIViewController {
         self.secureButton.layer.borderWidth = 0.5
         self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
         self.memorableButton.layer.borderWidth = 0.5
+        self.copyButton.layer.borderColor = UIColor.greenColor().CGColor
+        self.copyButton.layer.borderWidth = 0.5
     }
     
     func longPressed() {
         if(self.notCopying()) {
             self.copyPassword()
         }
+    }
+    
+    @IBAction func copyButtonPushed(sender: UIButton) {
+        print("hey there")
+        self.copyPassword()
     }
     
     func notCopying() -> Bool {
@@ -56,7 +64,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func copyPasswordToClipboard(stringToCopy:String) -> Void{
+    private func copyPasswordToClipboard(stringToCopy:String) -> Void {
         let pasteBoard = UIPasteboard.generalPasteboard()
         pasteBoard.string = stringToCopy
         presentCopiedAlert()
