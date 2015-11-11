@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Lm-RC-ad6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Lm-RC-ad6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -17,9 +19,6 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w00-5f-FHJ"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75g-bX-wIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,6 +76,20 @@
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5v-UM-izc">
+                                <rect key="frame" x="304" y="553" width="276" height="27"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="How to achieve secure passwords">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scu-Xv-f5y">
+                                <rect key="frame" x="20" y="553" width="276" height="27"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="Why use secure passwords?">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -84,28 +97,24 @@
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="16" id="CbV-nj-hEb"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="24" id="DgG-iH-0Ja"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="16" id="Ejh-jM-bCi"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="leading" secondItem="scu-Xv-f5y" secondAttribute="trailing" constant="8" id="QsP-Of-ySr"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T20-fB-cB6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="scu-Xv-f5y" secondAttribute="bottom" constant="20" id="dqM-aD-37c"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gkt-cG-huT"/>
+                            <constraint firstItem="scu-Xv-f5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hdf-o0-6qx"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njs-QB-Dy5"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odJ-Ya-hcH"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="top" secondItem="gZd-4s-r2n" secondAttribute="bottom" constant="8" id="qYw-Qk-4ok"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snf-gE-aqp"/>
                             <constraint firstItem="3QR-4a-BhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tam-Qw-hEB"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uZ6-2K-pkG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e5v-UM-izc" secondAttribute="bottom" constant="20" id="v0W-QC-Ps6"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="width" secondItem="scu-Xv-f5y" secondAttribute="width" id="z4k-Lq-rcV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ms2-hV-hRk">
-                        <barButtonItem key="leftBarButtonItem" title="Why Secure" id="kvR-lG-dYe">
-                            <connections>
-                                <segue destination="ipD-yD-W5G" kind="show" id="7GQ-fk-s4u"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="How Secure" id="Tdy-2x-ASa">
-                            <connections>
-                                <segue destination="izb-RJ-5T8" kind="show" id="keI-03-0bd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Ms2-hV-hRk"/>
                     <connections>
+                        <outlet property="copyButton" destination="guV-RY-mVQ" id="87I-rI-8mT"/>
                         <outlet property="generatedPasswordLabel" destination="Vzq-L4-7EZ" id="Jx9-a4-Udd"/>
                         <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
