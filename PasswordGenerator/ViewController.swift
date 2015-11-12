@@ -16,21 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak private var memorableButton: UIButton!
     @IBOutlet weak private var copyButton: UIButton!
     
-    private let longPressRecognizer = UILongPressGestureRecognizer()
     private var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureGeneratedPasswordLabel()
         self.labelDenotingGeneratedPassword.hidden = true
+        self.copyButton.enabled = false
+        self.copyButton.hidden = true
         self.addButtonBorders()
     }
     
     private func configureGeneratedPasswordLabel() -> Void {
         self.generatedPasswordLabel.text = " "
-        self.longPressRecognizer.addTarget(self, action: "longPressed")
-        self.generatedPasswordLabel.addGestureRecognizer(longPressRecognizer)
-        self.generatedPasswordLabel.userInteractionEnabled = true
     }
     
     private func addButtonBorders() -> Void{
@@ -42,19 +40,8 @@ class ViewController: UIViewController {
         self.copyButton.layer.borderWidth = 0.5
     }
     
-    func longPressed() {
-        if(self.notCopying()) {
-            self.copyPassword()
-        }
-    }
-    
     @IBAction func copyButtonPushed(sender: UIButton) {
-        print("hey there")
         self.copyPassword()
-    }
-    
-    func notCopying() -> Bool {
-        return self.longPressRecognizer.state == .Began
     }
     
     private func copyPassword() -> Void {
@@ -105,6 +92,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func secureButtonPushed() -> Void{
+        self.copyButton.enabled = true
+        self.copyButton.hidden = false
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
         let password = secure.getRandomPassword()
@@ -112,6 +101,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
+        self.copyButton.enabled = true
+        self.copyButton.hidden = false
         self.labelDenotingGeneratedPassword.hidden = false
         let memorableGenerator = MemorablePassword(length: self.passwordLength)
         let password = memorableGenerator.getRandomWords()
