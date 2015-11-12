@@ -30,7 +30,7 @@ class MemorablePassword {
     
     private func getWordWithoutSpacesOrHypens(randomWordGenerator:RandomWord) -> String{
         var string = randomWordGenerator.getRandomWord()
-        while(checkForSpaces(string) || checkForHypens(string)){
+        while(containsSpaces(string) || checkForHypens(string)){
             string = randomWordGenerator.getRandomWord()
         }
         return capitalizeFirstLetter(string)
@@ -50,7 +50,7 @@ class MemorablePassword {
         return string.substringFromIndex(string.startIndex.advancedBy(1))
     }
     
-    private func checkForSpaces(string:String) -> Bool{
+    private func containsSpaces(string:String) -> Bool{
         if(string.containsString(" ")){
             return true
         } else {
@@ -67,15 +67,16 @@ class MemorablePassword {
     }
     
     private func initRandomWordWithLengthDifference(word: String) -> RandomWord{
-        let randomWordTwoLength:Int = self.passwordLength - getStringLength(word)
-        return RandomWord(maxLength: randomWordTwoLength, minLength: randomWordTwoLength)
+        let lengthOfSecondWord:Int = self.passwordLength - getStringLength(word)
+        return RandomWord(maxLength: lengthOfSecondWord, minLength: lengthOfSecondWord)
     }
     
     private func getStringLength(string : String) -> Int{
         return string.characters.count
     }
     
-    func checkForPasswordError() -> Bool{
+    //Changed function name from checkForPasswordError because this checks specifically for a network error
+    func checkForNetworkError() -> Bool{
         if(self.password.rangeOfString("NetworkError") != nil) {
             return true
         } else {
