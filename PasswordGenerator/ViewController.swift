@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var secureButton: UIButton!
     @IBOutlet weak private var memorableButton: UIButton!
     @IBOutlet weak private var copyButton: UIButton!
+    @IBOutlet weak var whyButton: UIButton!
+    @IBOutlet weak var howButton: UIButton!
     
     private var passwordLength: Int = 12
     
@@ -25,6 +27,14 @@ class ViewController: UIViewController {
         self.copyButton.enabled = false
         self.copyButton.hidden = true
         self.addButtonBorders()
+        
+        whyButton.titleLabel!.numberOfLines = 0
+        whyButton.titleLabel!.adjustsFontSizeToFitWidth = true
+        whyButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        howButton.titleLabel!.numberOfLines = 0
+        howButton.titleLabel!.adjustsFontSizeToFitWidth = true
+        howButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
     private func configureGeneratedPasswordLabel() -> Void {
