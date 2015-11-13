@@ -74,8 +74,7 @@ class MemorablePassword {
     private func getStringLength(string : String) -> Int{
         return string.characters.count
     }
-    
-    //Changed function name from checkForPasswordError because this checks specifically for a network error
+
     func checkForNetworkError() -> Bool{
         if(self.password.rangeOfString("NetworkError") != nil) {
             return true
