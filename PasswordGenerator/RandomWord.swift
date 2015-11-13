@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RandomWord {
+class RandomWord{
     
     private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"

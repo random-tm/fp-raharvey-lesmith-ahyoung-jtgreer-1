@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     }
     
     private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void{
-        if(memorableGenerator.checkForPasswordError()) {
+        if(memorableGenerator.checkForNetworkError()) {
             self.presentErrorAlert()
         } else {
             self.generatedPasswordLabel.text = password
