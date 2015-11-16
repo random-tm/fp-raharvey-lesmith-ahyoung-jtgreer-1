@@ -22,32 +22,35 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureGeneratedPasswordLabel()
+        self.configurePasswordLabels()
+        self.configureButtons()
+    }
+    
+    private func configurePasswordLabels() -> Void {
+        self.generatedPasswordLabel.text = " "
         self.labelDenotingGeneratedPassword.hidden = true
+    }
+    
+    private func configureButtons() -> Void {
         self.copyButton.enabled = false
         self.copyButton.hidden = true
-        self.addButtonBorders()
-        
-        whyButton.titleLabel!.numberOfLines = 0
-        whyButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        whyButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        
-        howButton.titleLabel!.numberOfLines = 0
-        howButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        howButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.addButtonBorder(self.secureButton)
+        self.addButtonBorder(self.memorableButton)
+        self.addButtonBorder(self.copyButton)
+        self.configureNavigationButton(self.whyButton)
+        self.configureNavigationButton(self.howButton)
     }
     
-    private func configureGeneratedPasswordLabel() -> Void {
-        self.generatedPasswordLabel.text = " "
+    private func configureNavigationButton(button: UIButton) -> Void {
+        button.titleLabel!.numberOfLines = 0
+        button.titleLabel!.adjustsFontSizeToFitWidth = true
+        button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
     }
     
-    private func addButtonBorders() -> Void{
-        self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.secureButton.layer.borderWidth = 0.5
-        self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.memorableButton.layer.borderWidth = 0.5
-        self.copyButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.copyButton.layer.borderWidth = 0.5
+    private func addButtonBorder(button: UIButton) -> Void{
+        button.layer.borderColor = UIColor.greenColor().CGColor
+        button.layer.borderWidth = 0.5
     }
     
     @IBAction func copyButtonPushed(sender: UIButton) {
