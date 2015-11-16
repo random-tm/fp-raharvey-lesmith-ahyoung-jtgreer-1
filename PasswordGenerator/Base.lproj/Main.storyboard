@@ -146,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4PF-dR-hyL">
-                                <rect key="frame" x="20" y="80" width="560" height="500"/>
+                                <rect key="frame" x="28" y="80" width="552" height="500"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">A few things can make a password secure: randomness, length, and the types of characters that are used, which we call “entropy”. For example, a 12 digit password that only uses lowercase letters that form words is not as strong as a 12 digit password that uses random numbers as well as upper and lower case letters. The difference in time to crack these passwords is a matter of hours compared to hundreds of years.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,15 +156,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4PF-dR-hyL" firstAttribute="centerX" secondItem="MMI-Th-1V0" secondAttribute="centerX" id="94e-CN-BnO"/>
+                            <constraint firstItem="IyV-Km-jRW" firstAttribute="top" secondItem="4PF-dR-hyL" secondAttribute="bottom" constant="20" id="19X-8o-fK8"/>
                             <constraint firstItem="wzh-g0-dsi" firstAttribute="top" secondItem="Puf-ZR-DqB" secondAttribute="bottom" id="EKg-mP-gYV"/>
-                            <constraint firstItem="4PF-dR-hyL" firstAttribute="leading" secondItem="MMI-Th-1V0" secondAttribute="leadingMargin" id="JqE-9O-PW2"/>
                             <constraint firstItem="wzh-g0-dsi" firstAttribute="leading" secondItem="MMI-Th-1V0" secondAttribute="leadingMargin" id="Pqj-y3-djZ"/>
                             <constraint firstItem="egy-Ma-qga" firstAttribute="top" secondItem="wzh-g0-dsi" secondAttribute="bottom" constant="8" id="RYN-5Y-C8d"/>
-                            <constraint firstItem="4PF-dR-hyL" firstAttribute="top" secondItem="egy-Ma-qga" secondAttribute="bottom" constant="8" id="ZSz-md-npN"/>
-                            <constraint firstItem="IyV-Km-jRW" firstAttribute="top" secondItem="4PF-dR-hyL" secondAttribute="bottom" constant="20" id="eMo-BF-9YK"/>
-                            <constraint firstItem="4PF-dR-hyL" firstAttribute="trailing" secondItem="MMI-Th-1V0" secondAttribute="trailingMargin" id="ka4-pD-PR6"/>
+                            <constraint firstItem="4PF-dR-hyL" firstAttribute="leading" secondItem="MMI-Th-1V0" secondAttribute="leadingMargin" constant="8" id="YvQ-O8-XEn"/>
                             <constraint firstItem="egy-Ma-qga" firstAttribute="centerX" secondItem="MMI-Th-1V0" secondAttribute="centerX" id="tfo-yL-8b3"/>
+                            <constraint firstItem="4PF-dR-hyL" firstAttribute="trailing" secondItem="MMI-Th-1V0" secondAttribute="trailingMargin" id="ygv-LR-45m"/>
+                            <constraint firstItem="4PF-dR-hyL" firstAttribute="top" secondItem="egy-Ma-qga" secondAttribute="bottom" constant="8" id="zHU-hh-vKu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -201,7 +200,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-Ld-icR">
-                                <rect key="frame" x="20" y="80" width="560" height="500"/>
+                                <rect key="frame" x="28" y="80" width="560" height="500"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Your accounts are only as secure as the passwords that you use for them. If you use weak passwords (such as password, qwerty, or 1234), then your Facebook messages, iCloud pictures, and any money that you might have in a bank account are accessible to anyone who has basic skill at password hacking, which is often done by guessing all possible password combinations.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,14 +210,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x2F-DY-eC3" firstAttribute="top" secondItem="vnG-Ld-icR" secondAttribute="bottom" constant="20" id="1OF-Mo-TvS"/>
                             <constraint firstItem="wgV-4K-3IO" firstAttribute="centerX" secondItem="wg8-XM-u57" secondAttribute="centerX" id="Cbk-6I-znv"/>
                             <constraint firstItem="6NM-ef-Yi1" firstAttribute="top" secondItem="bqY-aW-THd" secondAttribute="bottom" id="NDr-OF-NG2"/>
-                            <constraint firstItem="vnG-Ld-icR" firstAttribute="leading" secondItem="wg8-XM-u57" secondAttribute="leadingMargin" id="OBf-ir-d1N"/>
+                            <constraint firstItem="vnG-Ld-icR" firstAttribute="leading" secondItem="wg8-XM-u57" secondAttribute="leadingMargin" constant="8" id="PcO-JA-MBI"/>
                             <constraint firstItem="vnG-Ld-icR" firstAttribute="leading" secondItem="wg8-XM-u57" secondAttribute="leadingMargin" id="QeB-GL-bFx"/>
-                            <constraint firstItem="vnG-Ld-icR" firstAttribute="top" secondItem="wgV-4K-3IO" secondAttribute="bottom" constant="8" id="S1k-4V-1OO"/>
-                            <constraint firstItem="vnG-Ld-icR" firstAttribute="centerX" secondItem="wg8-XM-u57" secondAttribute="centerX" id="WZH-e3-0Sn"/>
-                            <constraint firstItem="vnG-Ld-icR" firstAttribute="trailing" secondItem="wg8-XM-u57" secondAttribute="trailingMargin" id="XrX-A0-8SX"/>
+                            <constraint firstItem="x2F-DY-eC3" firstAttribute="top" secondItem="vnG-Ld-icR" secondAttribute="bottom" constant="20" id="UmF-DI-X6V"/>
+                            <constraint firstItem="vnG-Ld-icR" firstAttribute="top" secondItem="wgV-4K-3IO" secondAttribute="bottom" constant="8" id="XbW-0q-WoT"/>
+                            <constraint firstItem="vnG-Ld-icR" firstAttribute="trailing" secondItem="wg8-XM-u57" secondAttribute="trailingMargin" constant="8" id="YJg-Q4-ON6"/>
                             <constraint firstItem="6NM-ef-Yi1" firstAttribute="leading" secondItem="wg8-XM-u57" secondAttribute="leadingMargin" id="Ymf-Lf-TFE"/>
                             <constraint firstItem="x2F-DY-eC3" firstAttribute="top" secondItem="vnG-Ld-icR" secondAttribute="bottom" constant="20" id="h37-rP-6bW"/>
                             <constraint firstItem="vnG-Ld-icR" firstAttribute="top" secondItem="wgV-4K-3IO" secondAttribute="bottom" constant="8" id="t1a-dl-id7"/>
@@ -241,6 +239,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="61g-lT-nGc"/>
+        <segue reference="RhY-JB-vOr"/>
     </inferredMetricsTieBreakers>
 </document>
