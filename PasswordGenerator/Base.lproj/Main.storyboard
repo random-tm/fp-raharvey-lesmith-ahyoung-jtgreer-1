@@ -60,18 +60,8 @@
                                     <action selector="copyButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIc-Pp-IRj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5v-UM-izc">
-                                <rect key="frame" x="304" y="553" width="276" height="27"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                <state key="normal" title="How to achieve secure passwords">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="izb-RJ-5T8" kind="show" id="cec-st-yyk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scu-Xv-f5y">
-                                <rect key="frame" x="20" y="553" width="276" height="27"/>
+                                <rect key="frame" x="20" y="40" width="280" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Why use secure passwords?">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,26 +70,36 @@
                                     <segue destination="ipD-yD-W5G" kind="show" id="HDV-8w-XGV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5v-UM-izc">
+                                <rect key="frame" x="300" y="40" width="280" height="27"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="How to achieve secure passwords">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="izb-RJ-5T8" kind="show" id="cec-st-yyk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="scu-Xv-f5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aV-YD-ws1"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="width" secondItem="scu-Xv-f5y" secondAttribute="width" id="5SF-A6-ne9"/>
+                            <constraint firstItem="scu-Xv-f5y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="9IW-LY-msg"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="16" id="CbV-nj-hEb"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="24" id="DgG-iH-0Ja"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="16" id="Ejh-jM-bCi"/>
-                            <constraint firstItem="e5v-UM-izc" firstAttribute="leading" secondItem="scu-Xv-f5y" secondAttribute="trailing" constant="8" id="QsP-Of-ySr"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T20-fB-cB6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="scu-Xv-f5y" secondAttribute="bottom" constant="20" id="dqM-aD-37c"/>
-                            <constraint firstItem="scu-Xv-f5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hdf-o0-6qx"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="centerY" secondItem="scu-Xv-f5y" secondAttribute="centerY" id="eNZ-1c-deS"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jDn-QJ-IWZ"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njs-QB-Dy5"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odJ-Ya-hcH"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="top" secondItem="gZd-4s-r2n" secondAttribute="bottom" constant="16" id="qYw-Qk-4ok"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rlW-29-g74"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snf-gE-aqp"/>
                             <constraint firstItem="3QR-4a-BhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tam-Qw-hEB"/>
-                            <constraint firstItem="e5v-UM-izc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uZ6-2K-pkG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e5v-UM-izc" secondAttribute="bottom" constant="20" id="v0W-QC-Ps6"/>
-                            <constraint firstItem="e5v-UM-izc" firstAttribute="width" secondItem="scu-Xv-f5y" secondAttribute="width" id="z4k-Lq-rcV"/>
+                            <constraint firstItem="e5v-UM-izc" firstAttribute="leading" secondItem="scu-Xv-f5y" secondAttribute="trailing" id="zVk-jY-3tP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ms2-hV-hRk"/>
