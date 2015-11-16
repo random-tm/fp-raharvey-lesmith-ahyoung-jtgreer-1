@@ -12,11 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
+    
     @IBOutlet weak private var secureButton: UIButton!
     @IBOutlet weak private var memorableButton: UIButton!
     @IBOutlet weak private var copyButton: UIButton!
-    @IBOutlet weak var whyButton: UIButton!
-    @IBOutlet weak var howButton: UIButton!
+    
+    @IBOutlet weak var whyNavigationButton: UIButton!
+    @IBOutlet weak var howNavigationButton: UIButton!
     
     private var passwordLength: Int = 12
     
@@ -32,10 +34,11 @@ class ViewController: UIViewController {
     }
     
     private func configureButtons() -> Void {
+        self.configureCopyButton()
         self.addButtonBorder(self.secureButton)
         self.addButtonBorder(self.memorableButton)
-        self.configureNavigationButton(self.whyButton)
-        self.configureNavigationButton(self.howButton)
+        self.configureNavigationButton(self.whyNavigationButton)
+        self.configureNavigationButton(self.howNavigationButton)
     }
     
     private func configureCopyButton() {
