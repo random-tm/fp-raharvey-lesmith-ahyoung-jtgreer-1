@@ -32,13 +32,16 @@ class ViewController: UIViewController {
     }
     
     private func configureButtons() -> Void {
-        self.copyButton.enabled = false
-        self.copyButton.hidden = true
         self.addButtonBorder(self.secureButton)
         self.addButtonBorder(self.memorableButton)
-        self.addButtonBorder(self.copyButton)
         self.configureNavigationButton(self.whyButton)
         self.configureNavigationButton(self.howButton)
+    }
+    
+    private func configureCopyButton() {
+        self.copyButton.enabled = false
+        self.copyButton.hidden = true
+        self.addButtonBorder(self.copyButton)
     }
     
     private func configureNavigationButton(button: UIButton) -> Void {
