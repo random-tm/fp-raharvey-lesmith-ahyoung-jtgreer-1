@@ -12,42 +12,50 @@ class ViewController: UIViewController {
     
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
+    
     @IBOutlet weak private var secureButton: UIButton!
     @IBOutlet weak private var memorableButton: UIButton!
     @IBOutlet weak private var copyButton: UIButton!
-    @IBOutlet weak var whyButton: UIButton!
-    @IBOutlet weak var howButton: UIButton!
+    
+    @IBOutlet weak var whyNavigationButton: UIButton!
+    @IBOutlet weak var howNavigationButton: UIButton!
     
     private var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureGeneratedPasswordLabel()
+        self.configurePasswordLabels()
+        self.configureButtons()
+    }
+    
+    private func configurePasswordLabels() -> Void {
+        self.generatedPasswordLabel.text = " "
         self.labelDenotingGeneratedPassword.hidden = true
+    }
+    
+    private func configureButtons() -> Void {
+        self.configureCopyButton()
+        self.addButtonBorder(self.secureButton)
+        self.addButtonBorder(self.memorableButton)
+        self.configureNavigationButton(self.whyNavigationButton)
+        self.configureNavigationButton(self.howNavigationButton)
+    }
+    
+    private func configureCopyButton() {
         self.copyButton.enabled = false
         self.copyButton.hidden = true
-        self.addButtonBorders()
-        
-        whyButton.titleLabel!.numberOfLines = 0
-        whyButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        whyButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        
-        howButton.titleLabel!.numberOfLines = 0
-        howButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        howButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.addButtonBorder(self.copyButton)
     }
     
-    private func configureGeneratedPasswordLabel() -> Void {
-        self.generatedPasswordLabel.text = " "
+    private func addButtonBorder(button: UIButton) -> Void{
+        button.layer.borderColor = UIColor.greenColor().CGColor
+        button.layer.borderWidth = 0.5
     }
     
-    private func addButtonBorders() -> Void{
-        self.secureButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.secureButton.layer.borderWidth = 0.5
-        self.memorableButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.memorableButton.layer.borderWidth = 0.5
-        self.copyButton.layer.borderColor = UIColor.greenColor().CGColor
-        self.copyButton.layer.borderWidth = 0.5
+    private func configureNavigationButton(button: UIButton) -> Void {
+        button.titleLabel!.numberOfLines = 0
+        button.titleLabel!.adjustsFontSizeToFitWidth = true
+        button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
     @IBAction func copyButtonPushed(sender: UIButton) {
@@ -59,12 +67,6 @@ class ViewController: UIViewController {
         if(self.stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard(stringToCopy!)
         }
-    }
-    
-    private func copyPasswordToClipboard(stringToCopy:String) -> Void {
-        let pasteBoard = UIPasteboard.generalPasteboard()
-        pasteBoard.string = stringToCopy
-        presentCopiedAlert()
     }
     
     private func stringIsCopyable(password: String!) -> Bool {
@@ -81,6 +83,12 @@ class ViewController: UIViewController {
         } else {
             return false
         }
+    }
+    
+    private func copyPasswordToClipboard(stringToCopy:String) -> Void {
+        let pasteBoard = UIPasteboard.generalPasteboard()
+        pasteBoard.string = stringToCopy
+        presentCopiedAlert()
     }
     
     private func presentCopiedAlert() -> Void{
@@ -102,8 +110,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func secureButtonPushed() -> Void{
-        self.copyButton.enabled = true
-        self.copyButton.hidden = false
+        self.makeCopyButtonAppear()
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
         let password = secure.getRandomPassword()
@@ -111,12 +118,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.copyButton.enabled = true
-        self.copyButton.hidden = false
+        self.makeCopyButtonAppear()
         self.labelDenotingGeneratedPassword.hidden = false
         let memorableGenerator = MemorablePassword(length: self.passwordLength)
         let password = memorableGenerator.getRandomWords()
         self.checkForNetworkError(password, memorableGenerator: memorableGenerator)
+    }
+    
+    private func makeCopyButtonAppear() {
+        self.copyButton.enabled = true
+        self.copyButton.hidden = false
     }
     
     private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void{

@@ -106,11 +106,11 @@
                     <connections>
                         <outlet property="copyButton" destination="guV-RY-mVQ" id="87I-rI-8mT"/>
                         <outlet property="generatedPasswordLabel" destination="Vzq-L4-7EZ" id="Jx9-a4-Udd"/>
-                        <outlet property="howButton" destination="e5v-UM-izc" id="mf5-k6-dWT"/>
+                        <outlet property="howNavigationButton" destination="e5v-UM-izc" id="Y1u-6G-oq6"/>
                         <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
                         <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
-                        <outlet property="whyButton" destination="scu-Xv-f5y" id="hXx-RV-e0c"/>
+                        <outlet property="whyNavigationButton" destination="scu-Xv-f5y" id="dUv-9u-3Mx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -202,7 +202,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-Ld-icR">
                                 <rect key="frame" x="20" y="80" width="560" height="500"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
