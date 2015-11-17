@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C219A71BFAA4FD000F05C1 /* WordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */; };
+		23C219A91BFAA7A5000F05C1 /* CannedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C219A81BFAA7A5000F05C1 /* CannedWord.swift */; };
+		23C219AB1BFAAFC4000F05C1 /* Canned_Word.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C219AA1BFAAFC4000F05C1 /* Canned_Word.json */; };
 		846933A71BDEF476004A04C5 /* RandomWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846933A61BDEF476004A04C5 /* RandomWord.swift */; };
 		84A2B5951BD9A2E000AC1FE9 /* MemorablePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */; };
 		84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */; };
@@ -40,6 +43,9 @@
 /* Begin PBXFileReference section */
 		144EF8475D42D05B52FA297F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		16F435DD8252C55A2A3C4852 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordProtocol.swift; sourceTree = "<group>"; };
+		23C219A81BFAA7A5000F05C1 /* CannedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedWord.swift; sourceTree = "<group>"; };
+		23C219AA1BFAAFC4000F05C1 /* Canned_Word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Canned_Word.json; path = ../../../Desktop/Canned_Word.json; sourceTree = "<group>"; };
 		846933A61BDEF476004A04C5 /* RandomWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
 		84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePasswordTests.swift; sourceTree = "<group>"; };
 		84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,9 @@
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
 				84A93C791BD5C16100A3FD43 /* Info.plist */,
+				23C219AA1BFAAFC4000F05C1 /* Canned_Word.json */,
+				23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */,
+				23C219A81BFAA7A5000F05C1 /* CannedWord.swift */,
 			);
 			path = PasswordGenerator;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C219AB1BFAAFC4000F05C1 /* Canned_Word.json in Resources */,
 				84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */,
 				84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */,
 				84A93C731BD5C16100A3FD43 /* Main.storyboard in Resources */,
@@ -329,11 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C219A91BFAA7A5000F05C1 /* CannedWord.swift in Sources */,
 				846933A71BDEF476004A04C5 /* RandomWord.swift in Sources */,
 				84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */,
 				84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */,
 				84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */,
 				84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */,
+				23C219A71BFAA4FD000F05C1 /* WordProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
