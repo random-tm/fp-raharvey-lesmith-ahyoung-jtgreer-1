@@ -18,6 +18,7 @@
 		84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */; };
 		84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */; };
 		89A4B8CE7D0C8C210F94F360 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F435DD8252C55A2A3C4852 /* Pods.framework */; };
+		A05650451BFAA1AF009055C1 /* CryptoswiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePassword.swift; sourceTree = "<group>"; };
 		84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePassword.swift; sourceTree = "<group>"; };
+		A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapper.swift; sourceTree = "<group>"; };
 		F58E698204E87E35C5328295 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
 				84A93C791BD5C16100A3FD43 /* Info.plist */,
+				A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */,
 			);
 			path = PasswordGenerator;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				846933A71BDEF476004A04C5 /* RandomWord.swift in Sources */,
 				84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */,
+				A05650451BFAA1AF009055C1 /* CryptoswiftWrapper.swift in Sources */,
 				84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */,
 				84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */,
 				84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */,
