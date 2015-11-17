@@ -41,13 +41,13 @@ class ViewController: UIViewController {
         self.configureNavigationButton(self.howNavigationButton)
     }
     
-    private func configureCopyButton() {
+    private func configureCopyButton() -> Void {
         self.copyButton.enabled = false
         self.copyButton.hidden = true
         self.addButtonBorder(self.copyButton)
     }
     
-    private func addButtonBorder(button: UIButton) -> Void{
+    private func addButtonBorder(button: UIButton) -> Void {
         button.layer.borderColor = UIColor.greenColor().CGColor
         button.layer.borderWidth = 0.5
     }
@@ -59,10 +59,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func copyButtonPushed(sender: UIButton) {
-        self.copyPassword()
-    }
-    
-    private func copyPassword() -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard(stringToCopy!)
@@ -77,7 +73,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func stringIsEmpty(string:String) -> Bool{
+    private func stringIsEmpty(string:String) -> Bool {
         if(string == " "){
             return true
         } else {
@@ -91,25 +87,25 @@ class ViewController: UIViewController {
         presentCopiedAlert()
     }
     
-    private func presentCopiedAlert() -> Void{
+    private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
         alertController = addCopyAlertControllerAction("Dismiss", alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    private func createAlertController(title:String, message:String)->UIAlertController{
+    private func createAlertController(title:String, message:String) -> UIAlertController {
         let style = UIAlertControllerStyle.Alert
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         return alertController
     }
     
-    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)->UIAlertController{
+    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)->UIAlertController {
         let style = UIAlertActionStyle.Default
         alertController.addAction(UIAlertAction(title: title, style: style, handler: nil))
         return alertController
     }
     
-    @IBAction private func secureButtonPushed() -> Void{
+    @IBAction private func secureButtonPushed() -> Void {
         self.makeCopyButtonAppear()
         self.labelDenotingGeneratedPassword.hidden = false
         let secure = SecurePassword(length: self.passwordLength)
@@ -125,12 +121,12 @@ class ViewController: UIViewController {
         self.checkForNetworkError(password, memorableGenerator: memorableGenerator)
     }
     
-    private func makeCopyButtonAppear() {
+    private func makeCopyButtonAppear() -> Void {
         self.copyButton.enabled = true
         self.copyButton.hidden = false
     }
     
-    private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void{
+    private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void {
         if(memorableGenerator.checkForNetworkError()) {
             self.presentErrorAlert()
         } else {
