@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		846933A71BDEF476004A04C5 /* RandomWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846933A61BDEF476004A04C5 /* RandomWord.swift */; };
+		846933A71BDEF476004A04C5 /* RandomWordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846933A61BDEF476004A04C5 /* RandomWordFactory.swift */; };
 		84A2B5951BD9A2E000AC1FE9 /* MemorablePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */; };
 		84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */; };
 		84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C6F1BD5C16100A3FD43 /* ViewController.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		144EF8475D42D05B52FA297F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		16F435DD8252C55A2A3C4852 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		846933A61BDEF476004A04C5 /* RandomWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
+		846933A61BDEF476004A04C5 /* RandomWordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWordFactory.swift; sourceTree = "<group>"; };
 		84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePasswordTests.swift; sourceTree = "<group>"; };
 		84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
 				84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */,
 				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
-				846933A61BDEF476004A04C5 /* RandomWord.swift */,
+				846933A61BDEF476004A04C5 /* RandomWordFactory.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
@@ -332,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846933A71BDEF476004A04C5 /* RandomWord.swift in Sources */,
+				846933A71BDEF476004A04C5 /* RandomWordFactory.swift in Sources */,
 				84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */,
 				A05650451BFAA1AF009055C1 /* CryptoswiftWrapper.swift in Sources */,
 				84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */,
