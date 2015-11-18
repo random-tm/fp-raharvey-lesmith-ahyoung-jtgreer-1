@@ -21,10 +21,4 @@ class SecurePasswordTests: XCTestCase {
         XCTAssert(password.getRandomPassword().characters.count == 12)
     }
     
-    func testTwoSecurePasswordsAreNotEqual() {
-        let passwordOne = SecurePassword(length: 12)
-        let passwordTwo = SecurePassword(length: 12)
-        XCTAssert(passwordOne.getRandomPassword() != passwordTwo.getRandomPassword())
-    }
-    
 }
