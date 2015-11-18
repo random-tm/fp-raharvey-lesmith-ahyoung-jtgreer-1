@@ -9,8 +9,7 @@
 import Foundation
 
 class SecurePassword {
-    
-    private var password: String! = nil
+
     private var length: Int! = nil
     
     init(length: Int) {
@@ -19,8 +18,8 @@ class SecurePassword {
     
     func getRandomPassword() -> String! {
         let passwordGenerator = CryptoswiftWrapper.init(length: length)
-        self.password = passwordGenerator.getPassword()
-        return self.password
+        let password = passwordGenerator.getPassword()
+        return password
     }
     
 }
