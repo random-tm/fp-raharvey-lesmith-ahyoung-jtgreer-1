@@ -22,6 +22,7 @@
 		89A4B8CE7D0C8C210F94F360 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F435DD8252C55A2A3C4852 /* Pods.framework */; };
 		A031D45C1BFC3DAA00A4AC76 /* RandomWordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */; };
 		A031D45E1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */; };
+		A031D4601BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45F1BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePassword.swift; sourceTree = "<group>"; };
 		A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWordFactory.swift; sourceTree = "<group>"; };
 		A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapper.swift; sourceTree = "<group>"; };
+		A031D45F1BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapperTests.swift; sourceTree = "<group>"; };
 		F58E698204E87E35C5328295 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 		84A93C811BD5C16100A3FD43 /* PasswordGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
+				A031D45F1BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift */,
 				84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */,
 				84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */,
 				84A93C841BD5C16100A3FD43 /* Info.plist */,
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A031D4601BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift in Sources */,
 				84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */,
 				84A2B5951BD9A2E000AC1FE9 /* MemorablePasswordTests.swift in Sources */,
 			);
