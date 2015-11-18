@@ -21,10 +21,18 @@ class MemorablePassword: NSObject {
     
     func getRandomWords() -> String! {
         let wordOne = getWordWithoutSpacesOrHypens(8,minLength: 1)
-        let lengthOfSecondWord:Int = self.passwordLength - getStringLength(wordOne)
+        let lengthOfSecondWord:Int = getLengthOfWordByDifferingLength(wordOne)
         let wordTwo = getWordWithoutSpacesOrHypens(lengthOfSecondWord, minLength: lengthOfSecondWord)
         self.password = wordOne + wordTwo
         return self.password
+    }
+    
+    private func getLengthOfWordByDifferingLength(word:String) -> Int{
+        return self.passwordLength - getStringLength(word)
+    }
+    
+    private func getStringLength(string : String) -> Int{
+        return string.characters.count
     }
 
     private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String{
@@ -63,10 +71,6 @@ class MemorablePassword: NSObject {
         } else {
             return false
         }
-    }
-    
-    private func getStringLength(string : String) -> Int{
-        return string.characters.count
     }
 
     func checkForNetworkError() -> Bool{
