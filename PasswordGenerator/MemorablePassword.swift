@@ -12,25 +12,14 @@ class MemorablePassword: NSObject {
     
     private var password:String! = nil
     private var passwordLength:Int! = nil
-    private var willTest:Bool = false
+    private var wordGenerator:WordProtocol! = nil
     
-    init(length: Int = 0, willTest: Bool = false) {
+    init(length: Int, wordGenerator:WordProtocol) {
         self.passwordLength = length
+        self.wordGenerator = wordGenerator
     }
     
-    func getPassword() -> String!{
-        if (self.willTest == true){
-            let cannedWord = CannedWord()
-            self.password = cannedWord.getRandomWord(8, minLength: 1)
-            return self.password
-        }
-        else {
-            return getRandomWords()
-        }
-        
-    }
-    
-    private func getRandomWords() -> String{
+    func getRandomWords() -> String{
         let wordOne = getWordWithoutSpacesOrHypens(8,minLength: 1)
         let lengthOfSecondWord:Int = self.passwordLength - getStringLength(wordOne)
         let wordTwo = getWordWithoutSpacesOrHypens(lengthOfSecondWord, minLength: lengthOfSecondWord)
@@ -39,9 +28,9 @@ class MemorablePassword: NSObject {
     }
 
     private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String{
-        var string = RandomWord().getRandomWord(maxLength, minLength: minLength)
+        var string = wordGenerator.getRandomWord(maxLength, minLength: minLength)
         while(containsSpaces(string) || checkForHypens(string)){
-            string = RandomWord().getRandomWord(maxLength, minLength: minLength)
+            string = wordGenerator.getRandomWord(maxLength, minLength: minLength)
         }
         return capitalizeFirstLetter(string)
     }

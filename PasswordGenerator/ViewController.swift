@@ -116,8 +116,9 @@ class ViewController: UIViewController {
     @IBAction private func memorableButtonPushed() -> Void {
         self.makeCopyButtonAppear()
         self.labelDenotingGeneratedPassword.hidden = false
-        let memorableGenerator = MemorablePassword(length: self.passwordLength)
-        let password = memorableGenerator.getPassword()
+        let wordGenerator:RandomWord = RandomWord()
+        let memorableGenerator = MemorablePassword(length: self.passwordLength, wordGenerator: wordGenerator)
+        let password = memorableGenerator.getRandomWords()
         self.checkForNetworkError(password, memorableGenerator: memorableGenerator)
     }
     
