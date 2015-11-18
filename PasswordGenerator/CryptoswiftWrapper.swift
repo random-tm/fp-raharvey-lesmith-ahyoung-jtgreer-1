@@ -3,7 +3,7 @@
 //  PasswordGenerator
 //
 //  Created by Lucas Smith on 11/16/15.
-//  Copyright © 2015 Rachel Harvey. All rights reserved.
+//  Copyright © 2015 Rachel Harvey, Lucas Smith, Aaron Young, and Jeffery Greer. All rights reserved.
 //
 
 import Foundation
