@@ -19,7 +19,7 @@ class MemorablePassword: NSObject {
         self.wordGenerator = wordGenerator
     }
     
-    func getRandomWords() -> String{
+    func getRandomWords() -> String! {
         let wordOne = getWordWithoutSpacesOrHypens(8,minLength: 1)
         let lengthOfSecondWord:Int = self.passwordLength - getStringLength(wordOne)
         let wordTwo = getWordWithoutSpacesOrHypens(lengthOfSecondWord, minLength: lengthOfSecondWord)
