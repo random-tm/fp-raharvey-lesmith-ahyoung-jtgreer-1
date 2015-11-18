@@ -24,7 +24,8 @@ class MemorablePassword {
     func getPassword() -> String!{
         if (self.willTest == true){
             let cannedWord = CannedWord()
-            self.password cannedWord.getRandomWord()
+            self.password = cannedWord.getRandomWord()
+            return self.password
         }
         else {
             return getRandomWords()
