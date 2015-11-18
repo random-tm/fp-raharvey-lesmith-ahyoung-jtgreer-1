@@ -2,7 +2,7 @@
 //  CryptoswiftWrapperTests.swift
 //  PasswordGenerator
 //
-//  Created by admin on 11/17/15.
+//  Created by Rachel Harvey on 11/17/15.
 //  Copyright © 2015 Rachel Harvey, Lucas Smith, Aaron Young, and Jeffery Greer. All rights reserved.
 //
 
