@@ -26,6 +26,10 @@ class CryptoswiftWrapper{
     private func getDate() -> String{
         let date = NSDate()
         let formatter = NSDateFormatter()
+        return formatDate(date, formatter: formatter);
+    }
+    
+    private func formatDate(date:NSDate, formatter:NSDateFormatter) -> String{
         formatter.timeStyle = .FullStyle
         let data = formatter.stringFromDate(date)
         return data
