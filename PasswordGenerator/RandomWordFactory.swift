@@ -64,24 +64,37 @@ class RandomWord: WordProtocol{
     private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask{
         let task = NSURLSession.sharedSession().dataTaskWithRequest(self.requestHeaders) {
             data, response, error in
-            self.parseNetworkData(data, error: error)
+            self.setWord(response, data: data)
             dispatch_semaphore_signal(semaphore)
         }
         return task
     }
     
-    private func parseNetworkData(data:NSData?, error:NSError?) -> Void{
-        if (error != nil) {
-            self.word = "NetworkError"
+    private func setWord(response:NSURLResponse?, data:NSData?) -> Void{
+        if(response != nil && self.checkResponseCode(response!)){
+            self.parseNetworkData(data)
         } else {
-            let json = self.parseJson(data!)
-            self.word = json["word"] as! String
+            self.word = "NetworkError"
         }
+    }
+    
+    private func checkResponseCode(response:NSURLResponse) -> Bool{
+        let httpResponse = response as! NSHTTPURLResponse
+        if(httpResponse.statusCode != 200){
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    private func parseNetworkData(data:NSData?) -> Void{
+        let json = self.parseJson(data!)
+        self.word = json["word"] as! String
     }
     
     private func parseJson(data: NSData) -> NSDictionary{
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
         return json as! NSDictionary
     }
-
+    
 }

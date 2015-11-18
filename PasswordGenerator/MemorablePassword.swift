@@ -37,7 +37,7 @@ class MemorablePassword: NSObject {
         self.password = wordOne + wordTwo
         return self.password
     }
-    
+
     private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String{
         var string = RandomWord().getRandomWord(maxLength, minLength: minLength)
         while(containsSpaces(string) || checkForHypens(string)){
