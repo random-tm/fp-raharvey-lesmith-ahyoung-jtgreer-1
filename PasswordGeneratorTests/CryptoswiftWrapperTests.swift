@@ -11,21 +11,14 @@ import XCTest
 
 class CryptoswiftWrapperTests: XCTestCase {
     
-    func testCrtyptoswiftIsNotNil() {
+    func testCrtyptoswiftPasswordIsNotNil() {
         let password = CryptoswiftWrapper(length: 12)
         XCTAssert(password.getPassword() as String! != nil)
     }
     
-    func testRandomGenerationLength() {
+    func testCryptoswiftPasswordLength() {
         let password = CryptoswiftWrapper(length: 12)
         XCTAssert(password.getPassword().characters.count == 12)
     }
-    
-    func testTwoRandomPasswordsAreNotEqual() {
-        let passwordOne = CryptoswiftWrapper(length: 12)
-        let passwordTwo = CryptoswiftWrapper(length: 12)
-        XCTAssert(passwordOne.getPassword() != passwordTwo.getPassword())
-    }
-    
 }
 
