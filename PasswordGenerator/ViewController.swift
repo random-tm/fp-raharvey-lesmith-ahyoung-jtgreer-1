@@ -35,10 +35,8 @@ class ViewController: UIViewController {
     
     private func configureButtons() -> Void {
         self.configureCopyButton()
-        self.addButtonBorder(self.secureButton)
-        self.addButtonBorder(self.memorableButton)
-        self.configureNavigationButton(self.whyNavigationButton)
-        self.configureNavigationButton(self.howNavigationButton)
+        self.addBorders()
+        self.configureNavigationButtons()
     }
     
     private func configureCopyButton() -> Void {
@@ -47,12 +45,22 @@ class ViewController: UIViewController {
         self.addButtonBorder(self.copyButton)
     }
     
+    private func addBorders() -> Void {
+        self.addButtonBorder(self.secureButton)
+        self.addButtonBorder(self.memorableButton)
+    }
+    
     private func addButtonBorder(button: UIButton) -> Void {
         button.layer.borderColor = UIColor.greenColor().CGColor
         button.layer.borderWidth = 0.5
     }
     
-    private func configureNavigationButton(button: UIButton) -> Void {
+    private func configureNavigationButtons() {
+        self.configureNavigationButtonLabel(self.whyNavigationButton)
+        self.configureNavigationButtonLabel(self.howNavigationButton)
+    }
+    
+    private func configureNavigationButtonLabel(button: UIButton) -> Void {
         button.titleLabel!.numberOfLines = 0
         button.titleLabel!.adjustsFontSizeToFitWidth = true
         button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -106,25 +114,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func secureButtonPushed() -> Void {
-        self.makeCopyButtonAppear()
-        self.labelDenotingGeneratedPassword.hidden = false
+        self.makeElementsAppear()
         let secure = SecurePassword(length: self.passwordLength)
-        let password = secure.getRandomPassword()
-        self.generatedPasswordLabel.text = password
+        self.generatedPasswordLabel.text = secure.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.makeCopyButtonAppear()
-        self.labelDenotingGeneratedPassword.hidden = false
-        let wordGenerator:RandomWord = RandomWord()
-        let memorableGenerator = MemorablePassword(length: self.passwordLength, wordGenerator: wordGenerator)
-        let password = memorableGenerator.getRandomWords()
-        self.checkForNetworkError(password, memorableGenerator: memorableGenerator)
+        self.makeElementsAppear()
+        let memorableGenerator = MemorablePassword(length: self.passwordLength, wordGenerator: RandomWord())
+        self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
     
-    private func makeCopyButtonAppear() -> Void {
+    private func makeElementsAppear() -> Void {
         self.copyButton.enabled = true
         self.copyButton.hidden = false
+        self.labelDenotingGeneratedPassword.hidden = false
     }
     
     private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void {
