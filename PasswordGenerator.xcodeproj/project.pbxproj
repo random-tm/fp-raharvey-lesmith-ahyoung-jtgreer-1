@@ -17,6 +17,7 @@
 		84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */; };
 		84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */; };
 		84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */; };
+		84F264DA1BFBF52500139470 /* CryptoswiftWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F264D91BFBF52500139470 /* CryptoswiftWrapperTests.swift */; };
 		89A4B8CE7D0C8C210F94F360 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F435DD8252C55A2A3C4852 /* Pods.framework */; };
 		A05650451BFAA1AF009055C1 /* CryptoswiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePassword.swift; sourceTree = "<group>"; };
 		84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePassword.swift; sourceTree = "<group>"; };
+		84F264D91BFBF52500139470 /* CryptoswiftWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapperTests.swift; sourceTree = "<group>"; };
 		A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapper.swift; sourceTree = "<group>"; };
 		F58E698204E87E35C5328295 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,11 +117,11 @@
 				84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */,
 				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
 				846933A61BDEF476004A04C5 /* RandomWordFactory.swift */,
+				A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
 				84A93C791BD5C16100A3FD43 /* Info.plist */,
-				A05650441BFAA1AF009055C1 /* CryptoswiftWrapper.swift */,
 			);
 			path = PasswordGenerator;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 			children = (
 				84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */,
 				84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */,
+				84F264D91BFBF52500139470 /* CryptoswiftWrapperTests.swift */,
 				84A93C841BD5C16100A3FD43 /* Info.plist */,
 			);
 			path = PasswordGeneratorTests;
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F264DA1BFBF52500139470 /* CryptoswiftWrapperTests.swift in Sources */,
 				84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */,
 				84A2B5951BD9A2E000AC1FE9 /* MemorablePasswordTests.swift in Sources */,
 			);

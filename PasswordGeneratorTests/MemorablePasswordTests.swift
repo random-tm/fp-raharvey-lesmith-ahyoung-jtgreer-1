@@ -21,10 +21,4 @@ class MemorablePasswordTests: XCTestCase {
         XCTAssert(password.getRandomWords().characters.count == 12)
     }
     
-    func testTwoMemorablePasswordAreNotEqual() {
-        let passwordOne = MemorablePassword(length: 12)
-        let passwordTwo = MemorablePassword(length: 12)
-        XCTAssert(passwordOne.getRandomWords() != passwordTwo.getRandomWords())
-    }
-    
 }
