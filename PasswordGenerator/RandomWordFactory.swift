@@ -63,12 +63,8 @@ class RandomWordFactory {
     private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask{
         let task = NSURLSession.sharedSession().dataTaskWithRequest(self.requestHeaders) {
             data, response, error in
-            if(response != nil){
-                if(self.checkResponseCode(response!)){
-                    self.parseNetworkData(data)
-                } else {
-                    self.word = "NetworkError"
-                }
+            if(response != nil && self.checkResponseCode(response!)){
+                self.parseNetworkData(data)
             } else {
                 self.word = "NetworkError"
             }
