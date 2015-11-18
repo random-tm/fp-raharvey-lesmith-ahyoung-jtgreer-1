@@ -12,13 +12,28 @@ class RandomWord: WordProtocol{
     
     private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
-    private var maxLength: Int = 0
-    private var minLength: Int = 0
+    private var maxLength: Int!
+    private var minLength: Int!
     private var requestHeaders:NSMutableURLRequest! = nil
     private var word:String! = nil
     
-    init(){
-        
+    func getRandomWord(maxLength: Int, minLength: Int) -> String {
+        setupRequest(maxLength, minLength: minLength)
+        let semaphore = dispatch_semaphore_create(0)
+        connectToWordsAPI(semaphore)
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return self.word
+    }
+    
+    private func setupRequest(maxLength: Int, minLength: Int){
+        setLengths(maxLength, minLength: minLength)
+        let getURL:NSURL = getRequestUrl()
+        setRequestHeaders(getURL)
+    }
+    
+    private func setLengths(maxLength: Int, minLength: Int){
+        self.maxLength = maxLength
+        self.minLength = minLength
     }
     
     private func getRequestUrl() -> NSURL{
@@ -49,16 +64,9 @@ class RandomWord: WordProtocol{
         self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
     }
     
-    func getRandomWord(maxLength: Int, minLength: Int) -> String {
-        self.maxLength = maxLength
-        self.minLength = minLength
-        let getURL:NSURL = getRequestUrl()
-        setRequestHeaders(getURL)
-        let semaphore = dispatch_semaphore_create(0)
+    private func connectToWordsAPI(semaphore:dispatch_semaphore_t) -> Void{
         let task = createNetworkTask(semaphore)
         task.resume()
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        return self.word
     }
     
     private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask{
