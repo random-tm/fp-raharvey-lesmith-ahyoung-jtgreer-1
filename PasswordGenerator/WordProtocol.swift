@@ -7,6 +7,9 @@
 //
 
 import Foundation
+
 protocol WordProtocol {
+    
     func getRandomWord(maxLength: Int, minLength: Int) ->String
+    
 }
