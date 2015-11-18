@@ -14,13 +14,25 @@ class MemorablePassword {
     private var randomWordGeneratorOne:RandomWord! = nil
     private var randomWordGeneratorTwo:RandomWord! = nil
     private var passwordLength:Int! = nil
+    private var willTest:Bool = false
     
-    init(length: Int) {
+    init(length: Int = 0, willTest: Bool = false) {
         self.passwordLength = length
         self.randomWordGeneratorOne = RandomWord(maxLength: 8, minLength: 1)
     }
     
-    func getRandomWords() -> String!{
+    func getPassword() -> String!{
+        if (self.willTest == true){
+            let cannedWord = CannedWord()
+            self.password cannedWord.getRandomWord()
+        }
+        else {
+            return getRandomWords()
+        }
+        
+    }
+    
+    private func getRandomWords() -> String{
         let wordOne = getWordWithoutSpacesOrHypens(randomWordGeneratorOne)
         self.randomWordGeneratorTwo = self.initRandomWordWithLengthDifference(wordOne)
         let wordTwo = getWordWithoutSpacesOrHypens(randomWordGeneratorTwo)
