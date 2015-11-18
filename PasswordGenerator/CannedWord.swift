@@ -8,23 +8,30 @@
 
 import Foundation
 class CannedWord: WordProtocol{
-    private var word:String! = nil
+    private var word:String! = "wordidntwork"
     
     func getRandomWord(maxLength: Int, minLength: Int) ->String {
-        self.word = "wordidntwork"
-        if let path = NSBundle.mainBundle().pathForResource("Canned_Word", ofType: "json")
-            {
-                if let jsonData: NSData! = try! NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingUncached)
-                {
-                    if let jsonResult: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-                    {
-                        if let test: String = jsonResult["1"] as? String
-                        {
-                            self.word = test
-                        }
-                    }
-                }
+        if let path = NSBundle.mainBundle().pathForResource("Canned_Word", ofType: "json") {
+                self.extractJsonData(path)
         }
         return self.word
+    }
+    
+    func extractJsonData(path: String) {
+        if let jsonData: NSData! = try! NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingUncached) {
+            self.extractJsonResult(jsonData)
+        }
+    }
+    
+    func extractJsonResult(jsonData: NSData) {
+        if let jsonResult: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+            self.extractStringFromJson(jsonResult)
+        }
+    }
+    
+    func extractStringFromJson(jsonResult: NSDictionary) {
+        if let cannedWord: String = jsonResult["word"] as? String {
+            self.word = cannedWord
+        }
     }
 }
