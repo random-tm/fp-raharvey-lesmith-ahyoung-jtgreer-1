@@ -12,16 +12,13 @@ class RandomWord: WordProtocol{
     
     private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
-    private let maxLength: Int
-    private let minLength: Int
+    private var maxLength: Int = 0
+    private var minLength: Int = 0
     private var requestHeaders:NSMutableURLRequest! = nil
     private var word:String! = nil
     
-    init(maxLength: Int, minLength: Int){
-        self.maxLength = maxLength
-        self.minLength = minLength
-        let getURL:NSURL = getRequestUrl()
-        setRequestHeaders(getURL)
+    init(){
+        
     }
     
     private func getRequestUrl() -> NSURL{
@@ -52,7 +49,11 @@ class RandomWord: WordProtocol{
         self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
     }
     
-    func getRandomWord() -> String {
+    func getRandomWord(maxLength: Int, minLength: Int) -> String {
+        self.maxLength = maxLength
+        self.minLength = minLength
+        let getURL:NSURL = getRequestUrl()
+        setRequestHeaders(getURL)
         let semaphore = dispatch_semaphore_create(0)
         let task = createNetworkTask(semaphore)
         task.resume()

@@ -8,23 +8,20 @@
 
 import Foundation
 
-class MemorablePassword {
+class MemorablePassword: NSObject {
     
     private var password:String! = nil
-    private var randomWordGeneratorOne:RandomWord! = nil
-    private var randomWordGeneratorTwo:RandomWord! = nil
     private var passwordLength:Int! = nil
     private var willTest:Bool = false
     
     init(length: Int = 0, willTest: Bool = false) {
         self.passwordLength = length
-        self.randomWordGeneratorOne = RandomWord(maxLength: 8, minLength: 1)
     }
     
     func getPassword() -> String!{
         if (self.willTest == true){
             let cannedWord = CannedWord()
-            self.password = cannedWord.getRandomWord()
+            self.password = cannedWord.getRandomWord(8, minLength: 1)
             return self.password
         }
         else {
@@ -34,17 +31,17 @@ class MemorablePassword {
     }
     
     private func getRandomWords() -> String{
-        let wordOne = getWordWithoutSpacesOrHypens(randomWordGeneratorOne)
-        self.randomWordGeneratorTwo = self.initRandomWordWithLengthDifference(wordOne)
-        let wordTwo = getWordWithoutSpacesOrHypens(randomWordGeneratorTwo)
+        let wordOne = getWordWithoutSpacesOrHypens(8,minLength: 1)
+        let lengthOfSecondWord:Int = self.passwordLength - getStringLength(wordOne)
+        let wordTwo = getWordWithoutSpacesOrHypens(lengthOfSecondWord, minLength: lengthOfSecondWord)
         self.password = wordOne + wordTwo
         return self.password
     }
     
-    private func getWordWithoutSpacesOrHypens(randomWordGenerator:RandomWord) -> String{
-        var string = randomWordGenerator.getRandomWord()
+    private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String{
+        var string = RandomWord().getRandomWord(maxLength, minLength: minLength)
         while(containsSpaces(string) || checkForHypens(string)){
-            string = randomWordGenerator.getRandomWord()
+            string = RandomWord().getRandomWord(maxLength, minLength: minLength)
         }
         return capitalizeFirstLetter(string)
     }
@@ -77,11 +74,6 @@ class MemorablePassword {
         } else {
             return false
         }
-    }
-    
-    private func initRandomWordWithLengthDifference(word: String) -> RandomWord{
-        let lengthOfSecondWord:Int = self.passwordLength - getStringLength(word)
-        return RandomWord(maxLength: lengthOfSecondWord, minLength: lengthOfSecondWord)
     }
     
     private func getStringLength(string : String) -> Int{

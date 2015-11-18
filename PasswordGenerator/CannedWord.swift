@@ -10,7 +10,7 @@ import Foundation
 class CannedWord: WordProtocol{
     private var word:String! = nil
     
-    func getRandomWord() ->String {
+    func getRandomWord(maxLength: Int, minLength: Int) ->String {
         self.word = "wordidntwork"
         if let path = NSBundle.mainBundle().pathForResource("Canned_Word", ofType: "json")
             {
