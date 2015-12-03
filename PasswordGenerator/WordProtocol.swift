@@ -1,5 +1,5 @@
 //
-//  WordProtocol.swift
+//  WordSupplier.swift
 //  PasswordGenerator
 //
 //  Created by Aaron Young on 11/16/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol WordProtocol {
+protocol WordSupplier {
     
     func getRandomWord(maxLength: Int, minLength: Int) -> String
     
