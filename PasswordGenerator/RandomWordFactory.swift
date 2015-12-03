@@ -1,5 +1,5 @@
 //
-//  RandomWord.swift
+//  RandomWordFactory.swift
 //  PasswordGenerator
 //
 //  Created by Lucas Smith on 10/19/15.
