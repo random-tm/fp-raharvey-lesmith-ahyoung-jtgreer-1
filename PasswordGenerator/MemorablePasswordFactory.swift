@@ -1,5 +1,5 @@
 //
-//  MemorablePassword.swift
+//  MemorablePasswordFactory.swift
 //  PasswordGenerator
 //
 //  Created by Rachel Harvey on 10/19/15.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-class MemorablePassword: NSObject {
+class MemorablePasswordFactory: NSObject {
     
     private var password:String! = nil
     private var passwordLength:Int! = nil
-    private var wordGenerator:WordProtocol! = nil
+    private var wordGenerator:WordSupplier! = nil
     
-    init(length: Int, wordGenerator:WordProtocol) {
+    init(length: Int, wordGenerator:WordSupplier) {
         self.passwordLength = length
         self.wordGenerator = wordGenerator
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23C219A71BFAA4FD000F05C1 /* WordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */; };
+		23C219A71BFAA4FD000F05C1 /* WordSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C219A61BFAA4FD000F05C1 /* WordSupplier.swift */; };
 		23C219A91BFAA7A5000F05C1 /* CannedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C219A81BFAA7A5000F05C1 /* CannedWord.swift */; };
 		84351C181BFC197E00AA8402 /* Canned_Word.json in Resources */ = {isa = PBXBuildFile; fileRef = 84351C171BFC197E00AA8402 /* Canned_Word.json */; };
 		84366C761BFC4BB4007AA902 /* CannedWordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366C751BFC4BB4007AA902 /* CannedWordTests.swift */; };
@@ -18,7 +18,7 @@
 		84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C741BD5C16100A3FD43 /* Assets.xcassets */; };
 		84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */; };
 		84A93C831BD5C16100A3FD43 /* SecurePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */; };
-		84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */; };
+		84A93C9C1BD5C35600A3FD43 /* MemorablePasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9B1BD5C35600A3FD43 /* MemorablePasswordFactory.swift */; };
 		84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */; };
 		89A4B8CE7D0C8C210F94F360 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F435DD8252C55A2A3C4852 /* Pods.framework */; };
 		A031D45C1BFC3DAA00A4AC76 /* RandomWordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		144EF8475D42D05B52FA297F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		16F435DD8252C55A2A3C4852 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordProtocol.swift; sourceTree = "<group>"; };
+		23C219A61BFAA4FD000F05C1 /* WordSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSupplier.swift; sourceTree = "<group>"; };
 		23C219A81BFAA7A5000F05C1 /* CannedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedWord.swift; sourceTree = "<group>"; };
 		84351C171BFC197E00AA8402 /* Canned_Word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Canned_Word.json; sourceTree = "<group>"; };
 		84366C751BFC4BB4007AA902 /* CannedWordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedWordTests.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		84A93C821BD5C16100A3FD43 /* SecurePasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurePasswordTests.swift; sourceTree = "<group>"; };
 		84A93C841BD5C16100A3FD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePassword.swift; sourceTree = "<group>"; };
+		84A93C9B1BD5C35600A3FD43 /* MemorablePasswordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePasswordFactory.swift; sourceTree = "<group>"; };
 		84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePassword.swift; sourceTree = "<group>"; };
 		A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWordFactory.swift; sourceTree = "<group>"; };
 		A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapper.swift; sourceTree = "<group>"; };
@@ -125,13 +125,13 @@
 				A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */,
 				84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */,
 				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
-				84A93C9B1BD5C35600A3FD43 /* MemorablePassword.swift */,
+				84A93C9B1BD5C35600A3FD43 /* MemorablePasswordFactory.swift */,
 				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
 				84A93C741BD5C16100A3FD43 /* Assets.xcassets */,
 				84A93C761BD5C16100A3FD43 /* LaunchScreen.storyboard */,
 				84A93C791BD5C16100A3FD43 /* Info.plist */,
-				23C219A61BFAA4FD000F05C1 /* WordProtocol.swift */,
+				23C219A61BFAA4FD000F05C1 /* WordSupplier.swift */,
 				23C219A81BFAA7A5000F05C1 /* CannedWord.swift */,
 			);
 			path = PasswordGenerator;
@@ -349,13 +349,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C219A91BFAA7A5000F05C1 /* CannedWord.swift in Sources */,
-				84A93C9C1BD5C35600A3FD43 /* MemorablePassword.swift in Sources */,
+				84A93C9C1BD5C35600A3FD43 /* MemorablePasswordFactory.swift in Sources */,
 				A031D45E1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift in Sources */,
 				84A93C9E1BD5C39200A3FD43 /* SecurePassword.swift in Sources */,
 				84A93C701BD5C16100A3FD43 /* ViewController.swift in Sources */,
 				84A93C6E1BD5C16100A3FD43 /* AppDelegate.swift in Sources */,
 				A031D45C1BFC3DAA00A4AC76 /* RandomWordFactory.swift in Sources */,
-				23C219A71BFAA4FD000F05C1 /* WordProtocol.swift in Sources */,
+				23C219A71BFAA4FD000F05C1 /* WordSupplier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

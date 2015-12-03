@@ -1,5 +1,5 @@
 //
-//  SecurePassword.swift
+//  SecurePasswordFactory.swift
 //  PasswordGenerator
 //
 //  Created by Rachel Harvey on 10/19/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SecurePassword {
+class SecurePasswordFactory {
 
     private var length: Int! = nil
     

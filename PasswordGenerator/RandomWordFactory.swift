@@ -1,5 +1,5 @@
 //
-//  RandomWord.swift
+//  RandomWordFactory.swift
 //  PasswordGenerator
 //
 //  Created by Lucas Smith on 10/19/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RandomWord: WordProtocol{
+class RandomWordFactory: WordSupplier{
     
     private let apiKey: String = "82DOKQHMApmshM7N0DVS2kVxNK8Np1WZ60Ajsn7iJ2TgacYGHW"
     private let apiUrl: String = "https://wordsapiv1.p.mashape.com/words/"
