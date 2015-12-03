@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var howNavigationButton: UIButton!
     
     private var passwordLength: Int = 12
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         button.layer.borderWidth = 0.5
     }
     
-    private func configureNavigationButtons() {
+    private func configureNavigationButtons() -> Void {
         self.configureNavigationButtonLabel(self.whyNavigationButton)
         self.configureNavigationButtonLabel(self.howNavigationButton)
     }
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
-    @IBAction func copyButtonPushed(sender: UIButton) {
+    @IBAction func copyButtonPushed(sender: UIButton) -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard(stringToCopy!)
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)->UIAlertController {
+    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)-> UIAlertController {
         let style = UIAlertActionStyle.Default
         alertController.addAction(UIAlertAction(title: title, style: style, handler: nil))
         return alertController
@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    private func addErrorAlertControllerAction(title:String, alertController:UIAlertController) -> UIAlertController{
+    private func addErrorAlertControllerAction(title:String, alertController:UIAlertController) -> UIAlertController {
         let style = UIAlertActionStyle.Default
         let handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
         alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))

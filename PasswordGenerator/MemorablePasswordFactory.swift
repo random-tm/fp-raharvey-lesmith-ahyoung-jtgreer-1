@@ -27,15 +27,15 @@ class MemorablePasswordFactory: NSObject {
         return self.password
     }
     
-    private func getLengthOfWordByDifferingLength(word:String) -> Int{
+    private func getLengthOfWordByDifferingLength(word:String) -> Int {
         return self.passwordLength - getStringLength(word)
     }
     
-    private func getStringLength(string : String) -> Int{
+    private func getStringLength(string : String) -> Int {
         return string.characters.count
     }
 
-    private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String{
+    private func getWordWithoutSpacesOrHypens(maxLength:Int,minLength:Int) -> String {
         var string = wordGenerator.getRandomWord(maxLength, minLength: minLength)
         while(containsSpaces(string) || checkForHypens(string)){
             string = wordGenerator.getRandomWord(maxLength, minLength: minLength)
@@ -43,21 +43,21 @@ class MemorablePasswordFactory: NSObject {
         return capitalizeFirstLetter(string)
     }
     
-    private func capitalizeFirstLetter(string:String) -> String{
+    private func capitalizeFirstLetter(string:String) -> String {
         let firstLetter:String = getFirstLetter(string).capitalizedString
         let restOfString:String = getStringAndSkipFirstLetter(string)
         return firstLetter + restOfString
     }
     
-    private func getFirstLetter(string:String) -> String{
+    private func getFirstLetter(string:String) -> String {
         return string.substringToIndex(string.startIndex.advancedBy(1))
     }
     
-    private func getStringAndSkipFirstLetter(string:String) -> String{
+    private func getStringAndSkipFirstLetter(string:String) -> String {
         return string.substringFromIndex(string.startIndex.advancedBy(1))
     }
     
-    private func containsSpaces(string:String) -> Bool{
+    private func containsSpaces(string:String) -> Bool {
         if(string.containsString(" ")){
             return true
         } else {
@@ -65,7 +65,7 @@ class MemorablePasswordFactory: NSObject {
         }
     }
     
-    private func checkForHypens(string:String) -> Bool{
+    private func checkForHypens(string:String) -> Bool {
         if(string.containsString("-")){
             return true
         } else {
@@ -73,7 +73,7 @@ class MemorablePasswordFactory: NSObject {
         }
     }
 
-    func checkForNetworkError() -> Bool{
+    func checkForNetworkError() -> Bool {
         if(self.password.rangeOfString("NetworkError") != nil) {
             return true
         } else {

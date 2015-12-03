@@ -25,23 +25,23 @@ class RandomWordFactory: WordProtocol{
         return self.word
     }
     
-    private func setupRequest(maxLength: Int, minLength: Int){
+    private func setupRequest(maxLength: Int, minLength: Int) -> Void {
         setLengths(maxLength, minLength: minLength)
         let getURL:NSURL = getRequestUrl()
         setRequestHeaders(getURL)
     }
     
-    private func setLengths(maxLength: Int, minLength: Int){
+    private func setLengths(maxLength: Int, minLength: Int) -> Void {
         self.maxLength = maxLength
         self.minLength = minLength
     }
     
-    private func getRequestUrl() -> NSURL{
+    private func getRequestUrl() -> NSURL {
         let query:String = getQuery()
         return NSURL(string: apiUrl + query)!
     }
     
-    private func getQuery() -> String{
+    private func getQuery() -> String {
         if (minLengthEqualsMaxLength()) {
             return "?random=true&letters="+String(self.maxLength)
         } else {
@@ -49,7 +49,7 @@ class RandomWordFactory: WordProtocol{
         }
     }
     
-    private func minLengthEqualsMaxLength()->Bool{
+    private func minLengthEqualsMaxLength() -> Bool {
         if (self.minLength == self.maxLength) {
             return true
         } else {
@@ -57,19 +57,19 @@ class RandomWordFactory: WordProtocol{
         }
     }
     
-    private func setRequestHeaders(getURL: NSURL) -> Void{
+    private func setRequestHeaders(getURL: NSURL) -> Void {
         self.requestHeaders = NSMutableURLRequest(URL: getURL)
         self.requestHeaders.HTTPMethod = "GET"
         self.requestHeaders.setValue("application/json", forHTTPHeaderField: "Accept")
         self.requestHeaders.setValue(apiKey, forHTTPHeaderField: "X-Mashape-Key")
     }
     
-    private func connectToWordsAPI(semaphore:dispatch_semaphore_t) -> Void{
+    private func connectToWordsAPI(semaphore:dispatch_semaphore_t) -> Void {
         let task = createNetworkTask(semaphore)
         task.resume()
     }
     
-    private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask{
+    private func createNetworkTask(semaphore:dispatch_semaphore_t) -> NSURLSessionDataTask {
         let task = NSURLSession.sharedSession().dataTaskWithRequest(self.requestHeaders) {
             data, response, error in
             self.setWord(response, data: data)
@@ -78,7 +78,7 @@ class RandomWordFactory: WordProtocol{
         return task
     }
     
-    private func setWord(response:NSURLResponse?, data:NSData?) -> Void{
+    private func setWord(response:NSURLResponse?, data:NSData?) -> Void {
         if(response != nil && self.checkResponseCode(response!)){
             self.parseNetworkData(data)
         } else {
@@ -86,7 +86,7 @@ class RandomWordFactory: WordProtocol{
         }
     }
     
-    private func checkResponseCode(response:NSURLResponse) -> Bool{
+    private func checkResponseCode(response:NSURLResponse) -> Bool {
         let httpResponse = response as! NSHTTPURLResponse
         if(httpResponse.statusCode != 200){
             return false
@@ -95,12 +95,12 @@ class RandomWordFactory: WordProtocol{
         }
     }
     
-    private func parseNetworkData(data:NSData?) -> Void{
+    private func parseNetworkData(data:NSData?) -> Void {
         let json = self.parseJson(data!)
         self.word = json["word"] as! String
     }
     
-    private func parseJson(data: NSData) -> NSDictionary{
+    private func parseJson(data: NSData) -> NSDictionary {
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
         return json as! NSDictionary
     }
