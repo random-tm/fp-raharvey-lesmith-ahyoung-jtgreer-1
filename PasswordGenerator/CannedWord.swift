@@ -19,19 +19,19 @@ class CannedWord: WordProtocol{
         return self.word
     }
     
-    func extractJsonData(path: String) {
+    func extractJsonData(path: String) -> Void {
         if let jsonData: NSData! = try! NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingUncached) {
             self.extractJsonResult(jsonData)
         }
     }
     
-    func extractJsonResult(jsonData: NSData) {
+    func extractJsonResult(jsonData: NSData) -> Void {
         if let jsonResult: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
             self.extractStringFromJson(jsonResult)
         }
     }
     
-    func extractStringFromJson(jsonResult: NSDictionary) {
+    func extractStringFromJson(jsonResult: NSDictionary) -> Void {
         if let cannedWord: String = jsonResult["word"] as? String {
             self.word = cannedWord
         }

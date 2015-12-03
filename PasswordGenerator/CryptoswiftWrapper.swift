@@ -13,29 +13,29 @@ class CryptoswiftWrapper{
     
     private let length:Int
     
-    init(length : Int){
+    init(length : Int) {
         self.length = length
     }
     
-    func getPassword() -> String{
+    func getPassword() -> String {
         let rawData = getDate()
         let password = rawData.sha512()
         return trimPassword(password)
     }
     
-    private func getDate() -> String{
+    private func getDate() -> String {
         let date = NSDate()
         let formatter = NSDateFormatter()
         return formatDate(date, formatter: formatter);
     }
     
-    private func formatDate(date:NSDate, formatter:NSDateFormatter) -> String{
+    private func formatDate(date:NSDate, formatter:NSDateFormatter) -> String {
         formatter.timeStyle = .FullStyle
         let data = formatter.stringFromDate(date)
         return data
     }
     
-    private func trimPassword(password:String) -> String{
+    private func trimPassword(password:String) -> String {
         let trimIndex = password.startIndex.advancedBy(length)
         return password.substringToIndex(trimIndex)
     }
