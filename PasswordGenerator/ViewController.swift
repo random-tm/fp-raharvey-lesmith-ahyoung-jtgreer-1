@@ -115,13 +115,13 @@ class ViewController: UIViewController {
     
     @IBAction private func secureButtonPushed() -> Void {
         self.makeElementsAppear()
-        let secure = SecurePassword(length: self.passwordLength)
+        let secure = SecurePasswordFactory(length: self.passwordLength)
         self.generatedPasswordLabel.text = secure.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
         self.makeElementsAppear()
-        let memorableGenerator = MemorablePassword(length: self.passwordLength, wordGenerator: RandomWord())
+        let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWord())
         self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
     
@@ -131,7 +131,7 @@ class ViewController: UIViewController {
         self.labelDenotingGeneratedPassword.hidden = false
     }
     
-    private func checkForNetworkError(password:String, memorableGenerator:MemorablePassword) -> Void {
+    private func checkForNetworkError(password:String, memorableGenerator:MemorablePasswordFactory) -> Void {
         if(memorableGenerator.checkForNetworkError()) {
             self.presentErrorAlert()
         } else {
