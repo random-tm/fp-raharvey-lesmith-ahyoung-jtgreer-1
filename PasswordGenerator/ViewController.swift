@@ -121,7 +121,7 @@ class ViewController: UIViewController {
     
     @IBAction private func memorableButtonPushed() -> Void {
         self.makeElementsAppear()
-        let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWord())
+        let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
         self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
     
