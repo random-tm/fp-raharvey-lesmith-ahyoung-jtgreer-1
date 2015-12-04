@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
     
-    @IBOutlet weak private var secureButton: UIButton!
-    @IBOutlet weak private var memorableButton: UIButton!
-    @IBOutlet weak private var copyButton: UIButton!
+    @IBOutlet weak private var secureButton: BorderedButton!
+    @IBOutlet weak private var memorableButton: BorderedButton!
+    @IBOutlet weak private var copyButton: BorderedButton!
     
-    @IBOutlet weak var whyNavigationButton: UIButton!
-    @IBOutlet weak var howNavigationButton: UIButton!
+    @IBOutlet weak var whyNavigationButton: BorderedButton!
+    @IBOutlet weak var howNavigationButton: BorderedButton!
     
     private var passwordLength: Int = 12
 
@@ -35,35 +35,11 @@ class ViewController: UIViewController {
     
     private func configureButtons() -> Void {
         self.configureCopyButton()
-        self.addBorders()
-        self.configureNavigationButtons()
     }
     
     private func configureCopyButton() -> Void {
         self.copyButton.enabled = false
         self.copyButton.hidden = true
-        self.addButtonBorder(self.copyButton)
-    }
-    
-    private func addBorders() -> Void {
-        self.addButtonBorder(self.secureButton)
-        self.addButtonBorder(self.memorableButton)
-    }
-    
-    private func addButtonBorder(button: UIButton) -> Void {
-        button.layer.borderColor = UIColor.greenColor().CGColor
-        button.layer.borderWidth = 0.5
-    }
-    
-    private func configureNavigationButtons() -> Void {
-        self.configureNavigationButtonLabel(self.whyNavigationButton)
-        self.configureNavigationButtonLabel(self.howNavigationButton)
-    }
-    
-    private func configureNavigationButtonLabel(button: UIButton) -> Void {
-        button.titleLabel!.numberOfLines = 0
-        button.titleLabel!.adjustsFontSizeToFitWidth = true
-        button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
     @IBAction func copyButtonPushed(sender: UIButton) -> Void {
