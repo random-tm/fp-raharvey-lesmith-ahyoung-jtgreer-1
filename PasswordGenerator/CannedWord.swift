@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CannedWord: WordProtocol{
+class CannedWord: WordSupplier{
     
     private var word:String!
     
