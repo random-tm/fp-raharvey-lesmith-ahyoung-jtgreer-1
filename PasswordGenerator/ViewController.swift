@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         self.labelDenotingGeneratedPassword.hidden = true
     }
     
-    @IBAction func copyButtonPushed(sender: UIButton) -> Void {
+    @IBAction func copyButtonPushed() -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard()
