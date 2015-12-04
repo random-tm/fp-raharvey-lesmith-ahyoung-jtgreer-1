@@ -14,8 +14,16 @@ class BorderedButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        self.addBorder()
+        self.adjustLabel()
+    }
+    
+    func addBorder() -> Void {
         self.layer.borderColor = UIColor.greenColor().CGColor
         self.layer.borderWidth = 0.5
+    }
+    
+    func adjustLabel() -> Void {
         self.titleLabel!.numberOfLines = 0
         self.titleLabel!.adjustsFontSizeToFitWidth = true
         self.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
