@@ -100,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8427E3841C121EAA0043396C /* UIButton Objects */ = {
+			isa = PBXGroup;
+			children = (
+				84F74DC91C11147500B7C22A /* BorderedButton.swift */,
+				84A89E691C1206F3000842D7 /* CopyButton.swift */,
+			);
+			name = "UIButton Objects";
+			sourceTree = "<group>";
+		};
 		84A93C611BD5C16100A3FD43 = {
 			isa = PBXGroup;
 			children = (
@@ -125,12 +134,11 @@
 		84A93C6C1BD5C16100A3FD43 /* PasswordGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				8427E3841C121EAA0043396C /* UIButton Objects */,
 				A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */,
 				A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */,
 				84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */,
 				84A93C6F1BD5C16100A3FD43 /* ViewController.swift */,
-				84A89E691C1206F3000842D7 /* CopyButton.swift */,
-				84F74DC91C11147500B7C22A /* BorderedButton.swift */,
 				84A93C9B1BD5C35600A3FD43 /* MemorablePasswordFactory.swift */,
 				84A93C9D1BD5C39200A3FD43 /* SecurePassword.swift */,
 				84A93C711BD5C16100A3FD43 /* Main.storyboard */,
