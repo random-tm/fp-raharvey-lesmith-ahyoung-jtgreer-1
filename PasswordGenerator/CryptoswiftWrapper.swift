@@ -18,8 +18,8 @@ class CryptoswiftWrapper{
     }
     
     func getPassword() -> String {
-        let rawData = getDate()
-        let password = rawData.sha512()
+        let currentDate = getDate()
+        let password = hashCurrentDate(currentDate)
         return trimPassword(password)
     }
     
@@ -31,8 +31,12 @@ class CryptoswiftWrapper{
     
     private func formatDate(date:NSDate, formatter:NSDateFormatter) -> String {
         formatter.timeStyle = .FullStyle
-        let data = formatter.stringFromDate(date)
-        return data
+        let formattedDate = formatter.stringFromDate(date)
+        return formattedDate
+    }
+    
+    private func hashCurrentDate(uniqueKey: String) -> String {
+        return uniqueKey.sha512()
     }
     
     private func trimPassword(password:String) -> String {
