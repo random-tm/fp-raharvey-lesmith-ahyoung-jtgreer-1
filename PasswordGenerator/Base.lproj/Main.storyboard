@@ -50,7 +50,7 @@
                                     <action selector="memorableButtonPushed" destination="BYZ-38-t0r" eventType="touchUpInside" id="MGt-6Q-cK4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guV-RY-mVQ" customClass="BorderedButton" customModule="PasswordGenerator" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guV-RY-mVQ" customClass="CopyButton" customModule="PasswordGenerator" customModuleProvider="target">
                                 <rect key="frame" x="241" y="373" width="118" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Copy Password">

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak private var secureButton: BorderedButton!
     @IBOutlet weak private var memorableButton: BorderedButton!
-    @IBOutlet weak private var copyButton: BorderedButton!
+    @IBOutlet weak private var copyButton: CopyButton!
     
     @IBOutlet weak var whyNavigationButton: BorderedButton!
     @IBOutlet weak var howNavigationButton: BorderedButton!
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
-        self.configureButtons()
     }
     
     private func configurePasswordLabels() -> Void {
@@ -33,19 +32,10 @@ class ViewController: UIViewController {
         self.labelDenotingGeneratedPassword.hidden = true
     }
     
-    private func configureButtons() -> Void {
-        self.configureCopyButton()
-    }
-    
-    private func configureCopyButton() -> Void {
-        self.copyButton.enabled = false
-        self.copyButton.hidden = true
-    }
-    
     @IBAction func copyButtonPushed(sender: UIButton) -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
-            copyPasswordToClipboard(stringToCopy!)
+            copyPasswordToClipboard()
         }
     }
     
@@ -65,9 +55,9 @@ class ViewController: UIViewController {
         }
     }
     
-    private func copyPasswordToClipboard(stringToCopy:String) -> Void {
+    private func copyPasswordToClipboard() -> Void {
         let pasteBoard = UIPasteboard.generalPasteboard()
-        pasteBoard.string = stringToCopy
+        pasteBoard.string = self.generatedPasswordLabel.text
         presentCopiedAlert()
     }
     
@@ -102,8 +92,7 @@ class ViewController: UIViewController {
     }
     
     private func makeElementsAppear() -> Void {
-        self.copyButton.enabled = true
-        self.copyButton.hidden = false
+        self.copyButton.showButton()
         self.labelDenotingGeneratedPassword.hidden = false
     }
     
