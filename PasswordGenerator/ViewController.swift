@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
-        alertController = self.addAlertControllerAction(isErrorAlert: false, alertController: alertController)
+        alertController = self.addAlertControllerAction(alertController, isErrorAlert: false)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func addAlertControllerAction(isErrorAlert isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
+    private func addAlertControllerAction(alertController: UIAlertController, isErrorAlert: Bool) -> UIAlertController {
         let handler = self.handlerForType(isErrorAlert: isErrorAlert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: handler))
         return alertController
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
     
     private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
-        alertController = self.addAlertControllerAction(isErrorAlert: true, alertController: alertController)
+        alertController = self.addAlertControllerAction(alertController, isErrorAlert: true)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
