@@ -91,8 +91,8 @@ class ViewController: UIViewController {
     
     @IBAction private func secureButtonPushed() -> Void {
         self.showCopyButtonAndPasswordLabel()
-        let secure = SecurePasswordFactory(length: self.passwordLength)
-        self.generatedPasswordLabel.text = secure.getRandomPassword()
+        let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
+        self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
