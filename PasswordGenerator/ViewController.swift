@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var memorableButton: BorderedButton!
     @IBOutlet weak private var copyButton: CopyButton!
     
-    @IBOutlet weak var whyNavigationButton: BorderedButton!
-    @IBOutlet weak var howNavigationButton: BorderedButton!
+    @IBOutlet weak private var whyNavigationButton: BorderedButton!
+    @IBOutlet weak private var howNavigationButton: BorderedButton!
     
     private var passwordLength: Int = 12
 
