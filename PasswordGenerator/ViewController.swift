@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
-        alertController = addCopyAlertControllerAction("Dismiss", alertController: alertController)
+        alertController = self.addAlertControllerAction(false, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -73,10 +73,21 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)-> UIAlertController {
+    private func addAlertControllerAction(isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
         let style = UIAlertActionStyle.Default
-        alertController.addAction(UIAlertAction(title: title, style: style, handler: nil))
+        let handler = self.handlerForType(isErrorAlert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: style, handler: handler))
         return alertController
+    }
+    
+    private func handlerForType(isErrorAlert: Bool) -> ((UIAlertAction!) -> ())! {
+        var handler: ((UIAlertAction!) -> ())!
+        if(isErrorAlert) {
+            handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
+        } else {
+            handler = nil
+        }
+        return handler
     }
     
     @IBAction private func secureButtonPushed() -> Void {
@@ -106,15 +117,8 @@ class ViewController: UIViewController {
     
     private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
-        alertController = addErrorAlertControllerAction("Dismiss", alertController: alertController)
+        alertController = self.addAlertControllerAction(true, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    private func addErrorAlertControllerAction(title:String, alertController:UIAlertController) -> UIAlertController {
-        let style = UIAlertActionStyle.Default
-        let handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
-        alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))
-        return alertController
     }
 
 }
