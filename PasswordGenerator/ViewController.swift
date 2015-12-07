@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
-        alertController = self.addAlertControllerAction(false, alertController: alertController)
+        alertController = self.addAlertControllerAction(isErrorAlert: false, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -73,13 +73,13 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func addAlertControllerAction(isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
-        let handler = self.handlerForType(isErrorAlert)
+    private func addAlertControllerAction(isErrorAlert isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
+        let handler = self.handlerForType(isErrorAlert: isErrorAlert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: handler))
         return alertController
     }
     
-    private func handlerForType(isErrorAlert: Bool) -> ((UIAlertAction!) -> ())! {
+    private func handlerForType(isErrorAlert isErrorAlert: Bool) -> ((UIAlertAction!) -> ())! {
         var handler: ((UIAlertAction!) -> ())!
         if(isErrorAlert) {
             handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
     
     private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
-        alertController = self.addAlertControllerAction(true, alertController: alertController)
+        alertController = self.addAlertControllerAction(isErrorAlert: true, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
