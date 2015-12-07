@@ -13,19 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
     
-    @IBOutlet weak private var secureButton: UIButton!
-    @IBOutlet weak private var memorableButton: UIButton!
-    @IBOutlet weak private var copyButton: UIButton!
+    @IBOutlet weak private var secureButton: BorderedButton!
+    @IBOutlet weak private var memorableButton: BorderedButton!
+    @IBOutlet weak private var copyButton: CopyButton!
     
-    @IBOutlet weak var whyNavigationButton: UIButton!
-    @IBOutlet weak var howNavigationButton: UIButton!
+    @IBOutlet weak var whyNavigationButton: BorderedButton!
+    @IBOutlet weak var howNavigationButton: BorderedButton!
     
     private var passwordLength: Int = 12
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
-        self.configureButtons()
     }
     
     private func configurePasswordLabels() -> Void {
@@ -33,43 +32,10 @@ class ViewController: UIViewController {
         self.labelDenotingGeneratedPassword.hidden = true
     }
     
-    private func configureButtons() -> Void {
-        self.configureCopyButton()
-        self.addBorders()
-        self.configureNavigationButtons()
-    }
-    
-    private func configureCopyButton() -> Void {
-        self.copyButton.enabled = false
-        self.copyButton.hidden = true
-        self.addButtonBorder(self.copyButton)
-    }
-    
-    private func addBorders() -> Void {
-        self.addButtonBorder(self.secureButton)
-        self.addButtonBorder(self.memorableButton)
-    }
-    
-    private func addButtonBorder(button: UIButton) -> Void {
-        button.layer.borderColor = UIColor.greenColor().CGColor
-        button.layer.borderWidth = 0.5
-    }
-    
-    private func configureNavigationButtons() -> Void {
-        self.configureNavigationButtonLabel(self.whyNavigationButton)
-        self.configureNavigationButtonLabel(self.howNavigationButton)
-    }
-    
-    private func configureNavigationButtonLabel(button: UIButton) -> Void {
-        button.titleLabel!.numberOfLines = 0
-        button.titleLabel!.adjustsFontSizeToFitWidth = true
-        button.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
-    }
-    
-    @IBAction func copyButtonPushed(sender: UIButton) -> Void {
+    @IBAction func copyButtonPushed() -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
         if(self.stringIsCopyable(stringToCopy!)) {
-            copyPasswordToClipboard(stringToCopy!)
+            copyPasswordToClipboard()
         }
     }
     
@@ -89,15 +55,15 @@ class ViewController: UIViewController {
         }
     }
     
-    private func copyPasswordToClipboard(stringToCopy:String) -> Void {
+    private func copyPasswordToClipboard() -> Void {
         let pasteBoard = UIPasteboard.generalPasteboard()
-        pasteBoard.string = stringToCopy
+        pasteBoard.string = self.generatedPasswordLabel.text
         presentCopiedAlert()
     }
     
     private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
-        alertController = addCopyAlertControllerAction("Dismiss", alertController: alertController)
+        alertController = self.addAlertControllerAction(false, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -107,27 +73,36 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func addCopyAlertControllerAction(title:String, alertController:UIAlertController)-> UIAlertController {
-        let style = UIAlertActionStyle.Default
-        alertController.addAction(UIAlertAction(title: title, style: style, handler: nil))
+    private func addAlertControllerAction(isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
+        let handler = self.handlerForType(isErrorAlert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: handler))
         return alertController
     }
     
+    private func handlerForType(isErrorAlert: Bool) -> ((UIAlertAction!) -> ())! {
+        var handler: ((UIAlertAction!) -> ())!
+        if(isErrorAlert) {
+            handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
+        } else {
+            handler = nil
+        }
+        return handler
+    }
+    
     @IBAction private func secureButtonPushed() -> Void {
-        self.makeElementsAppear()
+        self.showCopyButtonAndPasswordLabel()
         let secure = SecurePasswordFactory(length: self.passwordLength)
         self.generatedPasswordLabel.text = secure.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.makeElementsAppear()
+        self.showCopyButtonAndPasswordLabel()
         let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
         self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
     
-    private func makeElementsAppear() -> Void {
-        self.copyButton.enabled = true
-        self.copyButton.hidden = false
+    private func showCopyButtonAndPasswordLabel() -> Void {
+        self.copyButton.showButton()
         self.labelDenotingGeneratedPassword.hidden = false
     }
     
@@ -141,15 +116,8 @@ class ViewController: UIViewController {
     
     private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
-        alertController = addErrorAlertControllerAction("Dismiss", alertController: alertController)
+        alertController = self.addAlertControllerAction(true, alertController: alertController)
         self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    private func addErrorAlertControllerAction(title:String, alertController:UIAlertController) -> UIAlertController {
-        let style = UIAlertActionStyle.Default
-        let handler = {(alert: UIAlertAction!) in self.viewDidLoad()}
-        alertController.addAction(UIAlertAction(title: title, style: style, handler: handler))
-        return alertController
     }
 
 }
