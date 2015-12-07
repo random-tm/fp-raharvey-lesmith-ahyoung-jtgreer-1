@@ -74,9 +74,8 @@ class ViewController: UIViewController {
     }
     
     private func addAlertControllerAction(isErrorAlert: Bool, alertController:UIAlertController) -> UIAlertController {
-        let style = UIAlertActionStyle.Default
         let handler = self.handlerForType(isErrorAlert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: style, handler: handler))
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: handler))
         return alertController
     }
     
@@ -91,18 +90,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func secureButtonPushed() -> Void {
-        self.makeElementsAppear()
+        self.showCopyButtonAndPasswordLabel()
         let secure = SecurePasswordFactory(length: self.passwordLength)
         self.generatedPasswordLabel.text = secure.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.makeElementsAppear()
+        self.showCopyButtonAndPasswordLabel()
         let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
         self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
     
-    private func makeElementsAppear() -> Void {
+    private func showCopyButtonAndPasswordLabel() -> Void {
         self.copyButton.showButton()
         self.labelDenotingGeneratedPassword.hidden = false
     }
