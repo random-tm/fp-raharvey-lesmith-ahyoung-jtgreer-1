@@ -10,7 +10,7 @@ import Foundation
 
 class MemorablePasswordFactory: NSObject {
     
-    private var password:String! = nil
+    private var password:String = ""
     private var passwordLength:Int! = nil
     private var wordGenerator:WordSupplier! = nil
     
@@ -20,10 +20,13 @@ class MemorablePasswordFactory: NSObject {
     }
     
     func getRandomWords() -> String! {
-        let wordOne = getWordWithoutSpacesOrHypens(8,minLength: 1)
-        let lengthOfSecondWord:Int = getLengthOfWordByDifferingLength(wordOne)
-        let wordTwo = getWordWithoutSpacesOrHypens(lengthOfSecondWord, minLength: lengthOfSecondWord)
-        self.password = wordOne + wordTwo
+        var currentLetterCount = 0
+        while(currentLetterCount < passwordLength){
+            let maxLength = self.passwordLength - currentLetterCount
+            let word = getWordWithoutSpacesOrHypens(maxLength, minLength: 1)
+            currentLetterCount += getStringLength(word)
+            self.password = self.password + word
+        }
         return self.password
     }
     
