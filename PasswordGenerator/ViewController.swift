@@ -93,12 +93,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func secureButtonPushed() -> Void {
         self.showCopyButtonAndPasswordLabel()
+        self.passwordLength = Int(self.passwordLengthInput.text!)!
         let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
         self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
         self.showCopyButtonAndPasswordLabel()
+        self.passwordLength = Int(self.passwordLengthInput.text!)!
         let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
         self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
