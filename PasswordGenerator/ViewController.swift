@@ -20,9 +20,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak private var whyNavigationButton: BorderedButton!
     @IBOutlet weak private var howNavigationButton: BorderedButton!
     
-    @IBOutlet weak var passwordLengthInput: TwoNumberTextField!
+    @IBOutlet private weak var passwordLengthLabel: UILabel!
+    @IBOutlet private weak var passwordLengthInput: TwoNumberTextField!
     private var passwordLength: Int = 12
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
@@ -92,17 +93,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func secureButtonPushed() -> Void {
-        self.showCopyButtonAndPasswordLabel()
-        self.passwordLength = Int(self.passwordLengthInput.text!)!
-        let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
-        self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
+        if(canSetNewLength() && lengthIsWithinReason()) {
+            self.showCopyButtonAndPasswordLabel()
+            self.unhighlightNumberLimits()
+            let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
+            self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
+        } else {
+            self.highlightNumberLimits()
+        }
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.showCopyButtonAndPasswordLabel()
-        self.passwordLength = Int(self.passwordLengthInput.text!)!
-        let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
-        self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
+        if(canSetNewLength() && lengthIsWithinReason()) {
+            self.showCopyButtonAndPasswordLabel()
+            self.unhighlightNumberLimits()
+            let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
+            self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
+        } else {
+            self.highlightNumberLimits()
+        }
+    }
+    
+    func canSetNewLength() -> Bool {
+        if let length = Int(self.passwordLengthInput.text!) {
+            self.passwordLength = length
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func lengthIsWithinReason() -> Bool {
+        if 11 < self.passwordLength && self.passwordLength < 25 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func highlightNumberLimits() {
+        let passwordLabelString: NSString = self.passwordLengthLabel.text!
+        let mutableLabelString = NSMutableAttributedString(string: passwordLabelString as String)
+        mutableLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: passwordLabelString.rangeOfString("(12-24)"))
+        self.passwordLengthLabel.attributedText = mutableLabelString
+    }
+    
+    func unhighlightNumberLimits() {
+        let passwordLabelString: NSString = self.passwordLengthLabel.text!
+        self.passwordLengthLabel.text = passwordLabelString as String
     }
     
     private func showCopyButtonAndPasswordLabel() -> Void {
@@ -133,6 +171,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         currentString.stringByReplacingCharactersInRange(range, withString: string)
         return newString.length <= maxLength
     }
-
+    
 }
 

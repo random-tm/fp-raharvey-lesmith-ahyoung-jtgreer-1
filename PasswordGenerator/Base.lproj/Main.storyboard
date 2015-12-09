@@ -144,6 +144,7 @@
                         <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
                         <outlet property="passwordLengthInput" destination="f7L-HA-zlL" id="9Ih-Wr-nRA"/>
+                        <outlet property="passwordLengthLabel" destination="aLS-iu-qiN" id="liO-qF-g63"/>
                         <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
                         <outlet property="whyNavigationButton" destination="scu-Xv-f5y" id="dUv-9u-3Mx"/>
                     </connections>
