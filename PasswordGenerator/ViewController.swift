@@ -27,13 +27,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
-        self.passwordLengthInput.delegate = self
-        self.passwordLengthInput.keyboardType = UIKeyboardType.NumberPad
+        self.configurePasswordLengthInput()
     }
     
     private func configurePasswordLabels() -> Void {
         self.generatedPasswordLabel.text = " "
         self.labelDenotingGeneratedPassword.hidden = true
+    }
+    
+    private func configurePasswordLengthInput() -> Void {
+        self.passwordLengthInput.delegate = self
+        self.passwordLengthInput.keyboardType = UIKeyboardType.NumberPad
     }
     
     @IBAction func copyButtonPushed() -> Void {
@@ -115,7 +119,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func canSetNewLength() -> Bool {
+    private func canSetNewLength() -> Bool {
         if let length = Int(self.passwordLengthInput.text!) {
             self.passwordLength = length
             return true
@@ -124,7 +128,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func lengthIsWithinReason() -> Bool {
+    private func lengthIsWithinReason() -> Bool {
         if 11 < self.passwordLength && self.passwordLength < 25 {
             return true
         } else {
@@ -132,14 +136,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func highlightNumberLimits() {
+    private func highlightNumberLimits() {
         let passwordLabelString: NSString = self.passwordLengthLabel.text!
         let mutableLabelString = NSMutableAttributedString(string: passwordLabelString as String)
         mutableLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: passwordLabelString.rangeOfString("(12-24)"))
         self.passwordLengthLabel.attributedText = mutableLabelString
     }
     
-    func unhighlightNumberLimits() {
+    private func unhighlightNumberLimits() {
         let passwordLabelString: NSString = self.passwordLengthLabel.text!
         self.passwordLengthLabel.text = passwordLabelString as String
     }
@@ -163,7 +167,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+    @objc func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool
     {
         let maxLength = 2
