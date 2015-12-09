@@ -21,13 +21,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak private var howNavigationButton: BorderedButton!
     
     @IBOutlet private weak var passwordLengthLabel: UILabel!
-    @IBOutlet private weak var passwordLengthInput: TwoNumberTextField!
+    @IBOutlet private weak var passwordLengthInput: UITextField!
     private var passwordLength: Int = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
         self.passwordLengthInput.delegate = self
+        self.passwordLengthInput.keyboardType = UIKeyboardType.NumberPad
     }
     
     private func configurePasswordLabels() -> Void {

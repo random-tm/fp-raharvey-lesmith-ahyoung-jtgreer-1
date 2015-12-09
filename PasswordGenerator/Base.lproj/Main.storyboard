@@ -90,7 +90,7 @@
                                 <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-HA-zlL" customClass="TwoNumberTextField" customModule="PasswordGenerator" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-HA-zlL">
                                 <rect key="frame" x="386" y="285" width="36" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -143,7 +143,7 @@
                         <outlet property="howNavigationButton" destination="e5v-UM-izc" id="Y1u-6G-oq6"/>
                         <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
-                        <outlet property="passwordLengthInput" destination="f7L-HA-zlL" id="9Ih-Wr-nRA"/>
+                        <outlet property="passwordLengthInput" destination="f7L-HA-zlL" id="z0n-MD-Drz"/>
                         <outlet property="passwordLengthLabel" destination="aLS-iu-qiN" id="liO-qF-g63"/>
                         <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
                         <outlet property="whyNavigationButton" destination="scu-Xv-f5y" id="dUv-9u-3Mx"/>
