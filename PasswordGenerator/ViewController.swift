@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
@@ -20,11 +20,13 @@ class ViewController: UIViewController {
     @IBOutlet weak private var whyNavigationButton: BorderedButton!
     @IBOutlet weak private var howNavigationButton: BorderedButton!
     
+    @IBOutlet weak var passwordLengthInput: TwoNumberTextField!
     private var passwordLength: Int = 12
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configurePasswordLabels()
+        self.passwordLengthInput.delegate = self
     }
     
     private func configurePasswordLabels() -> Void {
@@ -118,6 +120,16 @@ class ViewController: UIViewController {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
         alertController = self.addAlertControllerAction(alertController, isErrorAlert: true)
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool
+    {
+        let maxLength = 2
+        let currentString: NSString = self.passwordLengthInput.text!
+        let newString: NSString =
+        currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
     }
 
 }
