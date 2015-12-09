@@ -80,18 +80,33 @@
                                     <segue destination="izb-RJ-5T8" kind="show" id="cec-st-yyk"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-HA-zlL" customClass="TwoNumberTextField" customModule="PasswordGenerator" customModuleProvider="target">
+                                <rect key="frame" x="296" y="169" width="36" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of characters in password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-iu-qiN">
+                                <rect key="frame" x="20" y="174" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="scu-Xv-f5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aV-YD-ws1"/>
+                            <constraint firstItem="aLS-iu-qiN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="37j-rf-tcT"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="width" secondItem="scu-Xv-f5y" secondAttribute="width" id="5SF-A6-ne9"/>
+                            <constraint firstItem="3QR-4a-BhA" firstAttribute="top" secondItem="f7L-HA-zlL" secondAttribute="bottom" constant="8" id="63e-xU-P5M"/>
                             <constraint firstItem="scu-Xv-f5y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="9IW-LY-msg"/>
+                            <constraint firstItem="aLS-iu-qiN" firstAttribute="centerY" secondItem="f7L-HA-zlL" secondAttribute="centerY" id="AgG-Cw-iAX"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="16" id="CbV-nj-hEb"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="24" id="DgG-iH-0Ja"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="16" id="Ejh-jM-bCi"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T20-fB-cB6"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="centerY" secondItem="scu-Xv-f5y" secondAttribute="centerY" id="eNZ-1c-deS"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="leading" secondItem="aLS-iu-qiN" secondAttribute="trailing" constant="8" id="iTa-MY-hTG"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jDn-QJ-IWZ"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njs-QB-Dy5"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odJ-Ya-hcH"/>
@@ -109,6 +124,7 @@
                         <outlet property="howNavigationButton" destination="e5v-UM-izc" id="Y1u-6G-oq6"/>
                         <outlet property="labelDenotingGeneratedPassword" destination="3QR-4a-BhA" id="LWh-pG-5Ve"/>
                         <outlet property="memorableButton" destination="gZd-4s-r2n" id="gox-3E-K0V"/>
+                        <outlet property="passwordLengthInput" destination="f7L-HA-zlL" id="9Ih-Wr-nRA"/>
                         <outlet property="secureButton" destination="BMy-2t-nkk" id="hYK-Kq-yYo"/>
                         <outlet property="whyNavigationButton" destination="scu-Xv-f5y" id="dUv-9u-3Mx"/>
                     </connections>
@@ -239,6 +255,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RhY-JB-vOr"/>
+        <segue reference="61g-lT-nGc"/>
     </inferredMetricsTieBreakers>
 </document>
