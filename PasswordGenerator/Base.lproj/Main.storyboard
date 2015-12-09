@@ -17,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QR-4a-BhA">
-                                <rect key="frame" x="186" y="207" width="229" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QR-4a-BhA">
+                                <rect key="frame" x="178" y="203" width="244" height="20"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GeneratedPasswordLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzq-L4-7EZ">
-                                <rect key="frame" x="168" y="243" width="265" height="20"/>
+                                <rect key="frame" x="168" y="239" width="265" height="20"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-2t-nkk" customClass="BorderedButton" customModule="PasswordGenerator" customModuleProvider="target">
-                                <rect key="frame" x="183" y="287" width="235" height="27"/>
+                                <rect key="frame" x="183" y="341" width="235" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title=" Generate Secure Password ">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZd-4s-r2n" customClass="BorderedButton" customModule="PasswordGenerator" customModuleProvider="target">
-                                <rect key="frame" x="169" y="330" width="262" height="27"/>
+                                <rect key="frame" x="169" y="384" width="262" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title=" Generate Memorable Password ">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guV-RY-mVQ" customClass="CopyButton" customModule="PasswordGenerator" customModuleProvider="target">
-                                <rect key="frame" x="241" y="373" width="118" height="27"/>
+                                <rect key="frame" x="241" y="427" width="118" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Copy Password">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,42 +80,61 @@
                                     <segue destination="izb-RJ-5T8" kind="show" id="cec-st-yyk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-HA-zlL" customClass="TwoNumberTextField" customModule="PasswordGenerator" customModuleProvider="target">
-                                <rect key="frame" x="296" y="169" width="36" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of characters in password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-iu-qiN">
-                                <rect key="frame" x="20" y="174" width="268" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of characters (12-24) in password:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-iu-qiN">
+                                <rect key="frame" x="178" y="275" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IbE-1b-5Hm"/>
+                                    <constraint firstAttribute="width" constant="200" id="q6q-xK-ehC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-HA-zlL" customClass="TwoNumberTextField" customModule="PasswordGenerator" customModuleProvider="target">
+                                <rect key="frame" x="386" y="285" width="36" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="scu-Xv-f5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aV-YD-ws1"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="leading" secondItem="aLS-iu-qiN" secondAttribute="trailing" constant="8" id="1yD-m8-574"/>
                             <constraint firstItem="aLS-iu-qiN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="37j-rf-tcT"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="trailing" secondItem="3QR-4a-BhA" secondAttribute="trailing" id="3DQ-El-zJq"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="width" secondItem="scu-Xv-f5y" secondAttribute="width" id="5SF-A6-ne9"/>
-                            <constraint firstItem="3QR-4a-BhA" firstAttribute="top" secondItem="f7L-HA-zlL" secondAttribute="bottom" constant="8" id="63e-xU-P5M"/>
                             <constraint firstItem="scu-Xv-f5y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="9IW-LY-msg"/>
-                            <constraint firstItem="aLS-iu-qiN" firstAttribute="centerY" secondItem="f7L-HA-zlL" secondAttribute="centerY" id="AgG-Cw-iAX"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="top" secondItem="3QR-4a-BhA" secondAttribute="bottom" constant="16" id="CbV-nj-hEb"/>
-                            <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="24" id="DgG-iH-0Ja"/>
+                            <constraint firstItem="aLS-iu-qiN" firstAttribute="top" secondItem="Vzq-L4-7EZ" secondAttribute="bottom" constant="16" id="Cgf-MQ-lDX"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="top" secondItem="BMy-2t-nkk" secondAttribute="bottom" constant="16" id="Ejh-jM-bCi"/>
+                            <constraint firstItem="aLS-iu-qiN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JC7-g6-aii"/>
                             <constraint firstItem="Vzq-L4-7EZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T20-fB-cB6"/>
+                            <constraint firstItem="BMy-2t-nkk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zxv-ck-T2g"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="centerY" secondItem="scu-Xv-f5y" secondAttribute="centerY" id="eNZ-1c-deS"/>
-                            <constraint firstItem="f7L-HA-zlL" firstAttribute="leading" secondItem="aLS-iu-qiN" secondAttribute="trailing" constant="8" id="iTa-MY-hTG"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="huW-cg-oq2"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jDn-QJ-IWZ"/>
+                            <constraint firstItem="BMy-2t-nkk" firstAttribute="top" secondItem="aLS-iu-qiN" secondAttribute="bottom" constant="16" id="jLW-sS-60L"/>
                             <constraint firstItem="gZd-4s-r2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njs-QB-Dy5"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odJ-Ya-hcH"/>
                             <constraint firstItem="guV-RY-mVQ" firstAttribute="top" secondItem="gZd-4s-r2n" secondAttribute="bottom" constant="16" id="qYw-Qk-4ok"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rlV-sk-DsQ"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rlW-29-g74"/>
                             <constraint firstItem="BMy-2t-nkk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snf-gE-aqp"/>
                             <constraint firstItem="3QR-4a-BhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tam-Qw-hEB"/>
+                            <constraint firstItem="f7L-HA-zlL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yYk-kw-2dF"/>
                             <constraint firstItem="e5v-UM-izc" firstAttribute="leading" secondItem="scu-Xv-f5y" secondAttribute="trailing" id="zVk-jY-3tP"/>
+                            <constraint firstItem="aLS-iu-qiN" firstAttribute="leading" secondItem="3QR-4a-BhA" secondAttribute="leading" id="zxT-qL-DWR"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="37j-rf-tcT"/>
+                                <exclude reference="jDn-QJ-IWZ"/>
+                                <exclude reference="snf-gE-aqp"/>
+                                <exclude reference="huW-cg-oq2"/>
+                                <exclude reference="yYk-kw-2dF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Ms2-hV-hRk"/>
                     <connections>
