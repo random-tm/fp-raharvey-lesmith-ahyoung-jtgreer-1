@@ -99,6 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func secureButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
+            self.passwordLengthInput.resignFirstResponder()
             self.showCopyButtonAndPasswordLabel()
             self.unhighlightNumberLimits()
             let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
@@ -110,6 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func memorableButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
+            self.passwordLengthInput.resignFirstResponder()
             self.showCopyButtonAndPasswordLabel()
             self.unhighlightNumberLimits()
             let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
