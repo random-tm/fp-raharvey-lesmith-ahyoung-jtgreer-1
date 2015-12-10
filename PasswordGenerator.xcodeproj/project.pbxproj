@@ -25,6 +25,7 @@
 		A031D45C1BFC3DAA00A4AC76 /* RandomWordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */; };
 		A031D45E1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */; };
 		A031D4601BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031D45F1BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift */; };
+		A0E554D91C19165C00EBD091 /* UI in Resources */ = {isa = PBXBuildFile; fileRef = A0E554D81C19165C00EBD091 /* UI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,10 @@
 		23C219A81BFAA7A5000F05C1 /* CannedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedWord.swift; sourceTree = "<group>"; };
 		84366C751BFC4BB4007AA902 /* CannedWordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedWordTests.swift; sourceTree = "<group>"; };
 		84A2B5941BD9A2E000AC1FE9 /* MemorablePasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePasswordTests.swift; sourceTree = "<group>"; };
-		84A89E691C1206F3000842D7 /* CopyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
+		84A89E691C1206F3000842D7 /* CopyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CopyButton.swift; path = UI/CopyButton.swift; sourceTree = "<group>"; };
 		84A93C6A1BD5C16100A3FD43 /* PasswordGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C6D1BD5C16100A3FD43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84A93C6F1BD5C16100A3FD43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A93C6F1BD5C16100A3FD43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = UI/ViewController.swift; sourceTree = "<group>"; };
 		84A93C721BD5C16100A3FD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84A93C741BD5C16100A3FD43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84A93C771BD5C16100A3FD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,10 +66,11 @@
 		84A93C891BD5C16100A3FD43 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A93C9B1BD5C35600A3FD43 /* MemorablePasswordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorablePasswordFactory.swift; sourceTree = "<group>"; };
 		84A93C9D1BD5C39200A3FD43 /* SecurePasswordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurePasswordFactory.swift; sourceTree = "<group>"; };
-		84F74DC91C11147500B7C22A /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		84F74DC91C11147500B7C22A /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderedButton.swift; path = UI/BorderedButton.swift; sourceTree = "<group>"; };
 		A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomWordFactory.swift; sourceTree = "<group>"; };
 		A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapper.swift; sourceTree = "<group>"; };
 		A031D45F1BFC42E000A4AC76 /* CryptoswiftWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoswiftWrapperTests.swift; sourceTree = "<group>"; };
+		A0E554D81C19165C00EBD091 /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UI; sourceTree = "<group>"; };
 		F58E698204E87E35C5328295 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 		84A93C6C1BD5C16100A3FD43 /* PasswordGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				A0E554D81C19165C00EBD091 /* UI */,
 				8427E3841C121EAA0043396C /* UI Objects */,
 				A031D45D1BFC3DD200A4AC76 /* CryptoswiftWrapper.swift */,
 				A031D45B1BFC3DAA00A4AC76 /* RandomWordFactory.swift */,
@@ -283,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E554D91C19165C00EBD091 /* UI in Resources */,
 				84A93C781BD5C16100A3FD43 /* LaunchScreen.storyboard in Resources */,
 				84A93C751BD5C16100A3FD43 /* Assets.xcassets in Resources */,
 				84A93C731BD5C16100A3FD43 /* Main.storyboard in Resources */,
