@@ -99,9 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func secureButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
-            self.passwordLengthInput.resignFirstResponder()
-            self.showCopyButtonAndPasswordLabel()
-            self.unhighlightNumberLimits()
+            self.adjustUI()
             let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
             self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
         } else {
@@ -111,9 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func memorableButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
-            self.passwordLengthInput.resignFirstResponder()
-            self.showCopyButtonAndPasswordLabel()
-            self.unhighlightNumberLimits()
+            self.adjustUI()
             let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
             self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
         } else {
@@ -138,21 +134,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func highlightNumberLimits() {
-        let passwordLabelString: NSString = self.passwordLengthLabel.text!
-        let mutableLabelString = NSMutableAttributedString(string: passwordLabelString as String)
-        mutableLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: passwordLabelString.rangeOfString("(12-24)"))
-        self.passwordLengthLabel.attributedText = mutableLabelString
-    }
-    
-    private func unhighlightNumberLimits() {
-        let passwordLabelString: NSString = self.passwordLengthLabel.text!
-        self.passwordLengthLabel.text = passwordLabelString as String
+    private func adjustUI() -> Void {
+        self.passwordLengthInput.resignFirstResponder()
+        self.showCopyButtonAndPasswordLabel()
+        self.unhighlightNumberLimits()
     }
     
     private func showCopyButtonAndPasswordLabel() -> Void {
         self.copyButton.showButton()
         self.labelDenotingGeneratedPassword.hidden = false
+    }
+    
+    private func highlightNumberLimits() {
+        self.passwordLengthLabel.attributedText = highlightedAttributedString()
+    }
+    
+    private func highlightedAttributedString() -> NSAttributedString {
+        let passwordLabelString: NSString = self.passwordLengthLabel.text!
+        let mutableLabelString = NSMutableAttributedString(string: passwordLabelString as String)
+        mutableLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: passwordLabelString.rangeOfString("(12-24)"))
+        return mutableLabelString
+    }
+    
+    private func unhighlightNumberLimits() {
+        self.passwordLengthLabel.text = self.passwordLengthLabel.text!
     }
     
     private func checkForNetworkError(password:String, memorableGenerator:MemorablePasswordFactory) -> Void {
@@ -172,11 +177,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @objc func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool
     {
-        let maxLength = 2
         let currentString: NSString = self.passwordLengthInput.text!
         let newString: NSString =
         currentString.stringByReplacingCharactersInRange(range, withString: string)
-        return newString.length <= maxLength
+        return newString.length <= 2
     }
     
 }
