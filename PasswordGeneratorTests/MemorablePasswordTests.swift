@@ -13,13 +13,13 @@ class MemorablePasswordTests: XCTestCase {
     
     func testMemorablePasswordIsNotNil() {
         let wordGenerator = CannedWord()
-        let password = MemorablePassword(length: 12, wordGenerator: wordGenerator)
+        let password = MemorablePasswordFactory(length: 12, wordGenerator: wordGenerator)
         XCTAssert(password.getRandomWords() != nil)
     }
     
     func testMemorableGenerationLength() {
         let wordGenerator = CannedWord()
-        let password = MemorablePassword(length: 12, wordGenerator: wordGenerator)
+        let password = MemorablePasswordFactory(length: 12, wordGenerator: wordGenerator)
         XCTAssert(password.getRandomWords().characters.count == 12)
     }
     
