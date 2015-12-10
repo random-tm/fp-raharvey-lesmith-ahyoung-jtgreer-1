@@ -238,7 +238,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-Ld-icR">
                                 <rect key="frame" x="28" y="80" width="560" height="500"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Your accounts are only as secure as the passwords that you use for them. If you use weak passwords (such as password, qwerty, or 1234), then your Facebook messages, iCloud pictures, and any money that you might have in a bank account are accessible to anyone who has basic skill at password hacking, which is often done by guessing all possible password combinations.</string>
+                                <string key="text">The easier it is to guess your password, the easier it can be compromised.  If a stranger can correctly guess your password in person, imagine how quickly a computer can via a network breach.  While our memorable passwords are more secure than commonly used passwords, they are still vulnerable to sophisticated attacks/decryption.  For optimal security, please generate a Secure Password.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
