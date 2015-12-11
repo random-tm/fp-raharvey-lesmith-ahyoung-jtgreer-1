@@ -24,16 +24,7 @@ class MemorablePasswordTests: XCTestCase {
         for length in 12...24 {
             let password = MemorablePasswordFactory(length: length, wordGenerator: wordGenerator)
             let word = password.getRandomWords()
-            XCTAssert(isLengthEqualTo(word, length: length))
-        }
-    }
-    
-    private func isLengthEqualTo(word: String, length: Int) -> Bool{
-        let wordLength = word.characters.count
-        if(wordLength == length){
-            return true
-        } else {
-            return false
+            XCTAssert(word.characters.count == length)
         }
     }
     
