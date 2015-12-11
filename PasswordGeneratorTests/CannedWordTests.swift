@@ -22,16 +22,7 @@ class CannedWordTests: XCTestCase {
         let wordGenerator = CannedWord()
         for length in 12...24 {
             let word = wordGenerator.getRandomWord(length, minLength: 1)
-            XCTAssert(isLengthOfEqualTo(word, length: length))
-        }
-    }
-    
-    private func isLengthOfEqualTo(word: String, length: Int) -> Bool{
-        let wordLength = word.characters.count
-        if(wordLength == length){
-            return true
-        } else {
-            return false
+            XCTAssert(word.characters.count == length)
         }
     }
     
