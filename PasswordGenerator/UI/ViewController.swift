@@ -198,10 +198,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let currentString: NSString = self.passwordLengthInput.text!
         let newString: NSString =
         currentString.stringByReplacingCharactersInRange(range, withString: string)
-        return lengthIsThanOrEqualToTwo(newString)
+        return lengthIsLessThanOrEqualToTwo(newString)
     }
     
-    private func lengthIsThanOrEqualToTwo(text: NSString) -> Bool{
+    private func lengthIsLessThanOrEqualToTwo(text: NSString) -> Bool{
         if(text.length <= 2){
             return true
         } else {
