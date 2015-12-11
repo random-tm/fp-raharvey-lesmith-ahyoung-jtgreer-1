@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         generatePasswordIfAble(isSecure: false)
     }
     
-    private func generatePasswordIfAble(isSecure isSecure: Bool) {
+    private func generatePasswordIfAble(isSecure isSecure: Bool) -> Void {
         let (canSetNewLength, length) = self.passwordLengthInput.numberIsValid()
         if(canSetNewLength && lengthIsWithinLimits(length)) {
             updateUI()
@@ -126,7 +126,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         unhighlightNumberLimits()
     }
     
-    private func generatePassword(isSecure isSecure: Bool) {
+    private func generatePassword(isSecure isSecure: Bool) -> Void {
         if(isSecure) {
             generateSecurePassword()
         } else {
@@ -134,12 +134,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func generateSecurePassword() {
+    private func generateSecurePassword() -> Void {
         let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
         self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
     }
     
-    private func generateMemorablePassword() {
+    private func generateMemorablePassword() -> Void {
         let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
         checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
     }
@@ -149,11 +149,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.labelDenotingGeneratedPassword.hidden = false
     }
     
-    private func highlightNumberLimits() {
+    private func highlightNumberLimits() -> Void {
         self.passwordLengthLabel.attributedText = highlightPasswordLengthLabel()
     }
     
-    private func unhighlightNumberLimits() {
+    private func unhighlightNumberLimits() -> Void {
         self.passwordLengthLabel.text = self.passwordLengthLabel.text!
     }
     
