@@ -42,7 +42,7 @@ class RandomWordFactory: WordSupplier{
     }
     
     private func getQuery() -> String {
-        if (minLengthEqualsMaxLength()) {
+        if(minLengthEqualsMaxLength()) {
             return "?random=true&letters="+String(self.maxLength)
         } else {
             return "?random=true&lettersMax="+String(self.maxLength)+"&lettersMin="+String(self.minLength)
@@ -50,7 +50,7 @@ class RandomWordFactory: WordSupplier{
     }
     
     private func minLengthEqualsMaxLength() -> Bool {
-        if (self.minLength == self.maxLength) {
+        if(self.minLength == self.maxLength) {
             return true
         } else {
             return false

@@ -128,7 +128,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func lengthIsWithinLimits(length: Int) -> Bool {
-        if 11 < length && length < 25 {
+        if(11 < length && length < 25) {
             self.passwordLength = length
             return true
         } else {
