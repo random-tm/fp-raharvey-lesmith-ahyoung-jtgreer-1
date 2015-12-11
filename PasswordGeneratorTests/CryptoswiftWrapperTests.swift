@@ -12,13 +12,18 @@ import XCTest
 class CryptoswiftWrapperTests: XCTestCase {
     
     func testCryptoswiftPasswordIsNotNil() {
-        let password = CryptoswiftWrapper(length: 12)
-        XCTAssert(password.getPassword() as String! != nil)
+        for length in 12...24 {
+            let password = CryptoswiftWrapper(length: length)
+            XCTAssert(password.getPassword() as String! != nil)
+        }
     }
     
     func testCryptoswiftPasswordLength() {
-        let password = CryptoswiftWrapper(length: 12)
-        XCTAssert(password.getPassword().characters.count == 12)
+        for length in 12...24{
+            let password = CryptoswiftWrapper(length: length)
+            XCTAssert(password.getPassword().characters.count == length)
+        }
     }
+    
 }
 
