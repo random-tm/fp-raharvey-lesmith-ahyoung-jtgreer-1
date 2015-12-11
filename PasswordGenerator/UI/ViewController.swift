@@ -150,21 +150,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func highlightNumberLimits() {
-        self.passwordLengthLabel.attributedText = highlightedAttributedString()
+        self.passwordLengthLabel.attributedText = highlightPasswordLengthLabel()
     }
     
     private func unhighlightNumberLimits() {
         self.passwordLengthLabel.text = self.passwordLengthLabel.text!
     }
     
-    private func highlightedAttributedString() -> NSAttributedString {
-        let passwordLabelString: NSString = self.passwordLengthLabel.text!
-        let mutableLabelString = NSMutableAttributedString(string: passwordLabelString as String)
-        mutableLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: passwordLabelString.rangeOfString("(12-24)"))
-        return mutableLabelString
+    private func highlightPasswordLengthLabel() -> NSAttributedString {
+        let passwordLengthLabelText: NSString = self.passwordLengthLabel.text!
+        return turnPasswordLengthLabelRed(passwordLengthLabelText)
     }
     
-    private func checkForNetworkError(password:String, memorableGenerator:MemorablePasswordFactory) -> Void {
+    private func turnPasswordLengthLabelRed(passwordLabelString: NSString) -> NSAttributedString {
+        let passwordLengthLabel = NSMutableAttributedString(string: passwordLabelString as String)
+        let redColor = UIColor.redColor()
+        let passwordLabelText = passwordLabelString.rangeOfString("(12-24)")
+        passwordLengthLabel.addAttribute(NSForegroundColorAttributeName, value: redColor, range: passwordLabelText)
+        return passwordLengthLabel
+    }
+    
+    private func checkForNetworkError(password: String, memorableGenerator: MemorablePasswordFactory) -> Void {
         if(memorableGenerator.checkForNetworkError()) {
             presentErrorAlert()
         } else {
@@ -184,7 +190,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let currentString: NSString = self.passwordLengthInput.text!
         let newString: NSString =
         currentString.stringByReplacingCharactersInRange(range, withString: string)
-        return newString.length <= 2
+        return lengthIsThanOrEqualToTwo(newString)
+    }
+    
+    private func lengthIsThanOrEqualToTwo(text: NSString) -> Bool{
+        if(text.length <= 2){
+            return true
+        } else {
+            return false
+        }
     }
     
 }
