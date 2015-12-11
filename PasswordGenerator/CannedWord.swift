@@ -10,9 +10,14 @@ import Foundation
 
 class CannedWord: WordSupplier{
     
-    private var word:String!
+    private let word:String = "PleasurefulNonarticulate"
     
     func getRandomWord(maxLength: Int, minLength: Int) ->String {
-        return "beaver"
+        return trimWordToTength(maxLength)
     }
+    
+    func trimWordToTength(desiredLength: Int) -> String {
+        return word.substringToIndex(word.startIndex.advancedBy(desiredLength))
+    }
+    
 }
