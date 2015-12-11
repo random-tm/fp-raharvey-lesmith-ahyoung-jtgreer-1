@@ -13,7 +13,7 @@ class CopyButton: BorderedButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.hideButton()
+        hideButton()
     }
     
     func showButton() {

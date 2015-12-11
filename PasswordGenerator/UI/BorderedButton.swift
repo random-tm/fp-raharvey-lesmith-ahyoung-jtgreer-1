@@ -14,8 +14,8 @@ class BorderedButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.addBorder()
-        self.adjustLabel()
+        addBorder()
+        adjustLabel()
     }
     
     func addBorder() -> Void {
