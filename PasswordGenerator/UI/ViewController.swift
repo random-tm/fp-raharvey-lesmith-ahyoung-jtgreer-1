@@ -111,6 +111,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func highlightNumberLimits() -> Void {
+        self.passwordLengthLabel.attributedText = highlightPasswordLengthLabel()
+    }
+    
+    private func unhighlightNumberLimits() -> Void {
+        self.passwordLengthLabel.text = self.passwordLengthLabel.text!
+    }
+    
     private func checkIfPasswordLengthIsValid() -> Bool {
         if(inputNumberIsValid() && lengthIsWithinLimits(self.passwordLengthInput.numberValue())) {
             return true
@@ -155,14 +163,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private func showCopyButtonAndPasswordLabel() -> Void {
         self.copyButton.showButton()
         self.labelDenotingGeneratedPassword.hidden = false
-    }
-    
-    private func highlightNumberLimits() -> Void {
-        self.passwordLengthLabel.attributedText = highlightPasswordLengthLabel()
-    }
-    
-    private func unhighlightNumberLimits() -> Void {
-        self.passwordLengthLabel.text = self.passwordLengthLabel.text!
     }
     
     private func highlightPasswordLengthLabel() -> NSAttributedString {
