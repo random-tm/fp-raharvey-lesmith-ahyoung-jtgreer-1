@@ -11,7 +11,7 @@ import XCTest
 
 class CryptoswiftWrapperTests: XCTestCase {
     
-    func testCrtyptoswiftPasswordIsNotNil() {
+    func testCryptoswiftPasswordIsNotNil() {
         let password = CryptoswiftWrapper(length: 12)
         XCTAssert(password.getPassword() as String! != nil)
     }
