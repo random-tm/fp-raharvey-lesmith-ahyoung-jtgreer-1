@@ -12,13 +12,17 @@ import XCTest
 class SecurePasswordTests: XCTestCase {
     
     func testSecurePasswordIsNotNil() {
-        let password = SecurePasswordFactory(length: 12)
-        XCTAssert(password.getRandomPassword() != nil)
+        for length in 12...24 {
+            let password = SecurePasswordFactory(length: length)
+            XCTAssert(password.getRandomPassword() != nil)
+        }
     }
     
     func testSecureGenerationLength() {
-        let password = SecurePasswordFactory(length: 12)
-        XCTAssert(password.getRandomPassword().characters.count == 12)
+        for length in 12...24 {
+            let password = SecurePasswordFactory(length: length)
+            XCTAssert(password.getRandomPassword().characters.count == length)
+        }
     }
     
 }
