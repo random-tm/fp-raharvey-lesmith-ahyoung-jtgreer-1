@@ -24,11 +24,11 @@ class LengthInputTextField: UITextField {
         }
     }
     
-    func numberIsValid() -> (Bool, Int!) {
-        if let num = number() {
-            return (true, num)
+    func numberIsValid() -> Bool {
+        if(number() != nil) {
+            return true
         } else {
-            return (false, nil)
+            return false
         }
     }
 }
