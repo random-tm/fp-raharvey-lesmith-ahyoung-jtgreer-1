@@ -102,8 +102,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func generatePasswordIfAble(isSecure isSecure: Bool) -> Void {
-        let (canSetNewLength, length) = self.passwordLengthInput.numberIsValid()
-        if(canSetNewLength && lengthIsWithinLimits(length)) {
+        if(self.passwordLengthInput.numberIsValid() && lengthIsWithinLimits(self.passwordLengthInput.number())) {
             updateUI()
             generatePassword(isSecure: isSecure)
         } else {
