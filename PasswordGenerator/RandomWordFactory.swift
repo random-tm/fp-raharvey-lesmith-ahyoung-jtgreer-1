@@ -80,7 +80,7 @@ class RandomWordFactory: WordSupplier{
     
     private func setWord(response:NSURLResponse?, data:NSData?) -> Void {
         if(response != nil && self.checkResponseCode(response!)){
-            self.parseNetworkData(data)
+            parseNetworkData(data)
         } else {
             self.word = "NetworkError"
         }

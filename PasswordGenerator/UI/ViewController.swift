@@ -26,8 +26,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configurePasswordLabels()
-        self.configurePasswordLengthInput()
+        configurePasswordLabels()
+        configurePasswordLengthInput()
     }
     
     private func configurePasswordLabels() -> Void {
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func copyButtonPushed() -> Void {
         let stringToCopy = self.generatedPasswordLabel.text
-        if(self.stringIsCopyable(stringToCopy!)) {
+        if(stringIsCopyable(stringToCopy!)) {
             copyPasswordToClipboard()
         }
     }
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     private func presentCopiedAlert() -> Void {
         var alertController:UIAlertController = createAlertController("Copied", message: "Copied Password to Clipboard!")
-        alertController = self.addAlertControllerAction(alertController, isErrorAlert: false)
+        alertController = addAlertControllerAction(alertController, isErrorAlert: false)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func addAlertControllerAction(alertController: UIAlertController, isErrorAlert: Bool) -> UIAlertController {
-        let handler = self.handlerForType(isErrorAlert: isErrorAlert)
+        let handler = handlerForType(isErrorAlert: isErrorAlert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: handler))
         return alertController
     }
@@ -99,21 +99,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func secureButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
-            self.adjustUI()
+            adjustUI()
             let secureGenerator = SecurePasswordFactory(length: self.passwordLength)
             self.generatedPasswordLabel.text = secureGenerator.getRandomPassword()
         } else {
-            self.highlightNumberLimits()
+            highlightNumberLimits()
         }
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
         if(canSetNewLength() && lengthIsWithinReason()) {
-            self.adjustUI()
+            adjustUI()
             let memorableGenerator = MemorablePasswordFactory(length: self.passwordLength, wordGenerator: RandomWordFactory())
-            self.checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
+            checkForNetworkError(memorableGenerator.getRandomWords(), memorableGenerator: memorableGenerator)
         } else {
-            self.highlightNumberLimits()
+            highlightNumberLimits()
         }
     }
     
@@ -136,8 +136,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     private func adjustUI() -> Void {
         self.passwordLengthInput.resignFirstResponder()
-        self.showCopyButtonAndPasswordLabel()
-        self.unhighlightNumberLimits()
+        showCopyButtonAndPasswordLabel()
+        unhighlightNumberLimits()
     }
     
     private func showCopyButtonAndPasswordLabel() -> Void {
@@ -162,7 +162,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     private func checkForNetworkError(password:String, memorableGenerator:MemorablePasswordFactory) -> Void {
         if(memorableGenerator.checkForNetworkError()) {
-            self.presentErrorAlert()
+            presentErrorAlert()
         } else {
             self.generatedPasswordLabel.text = password
         }
@@ -170,7 +170,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     private func presentErrorAlert() -> Void {
         var alertController = createAlertController("Error", message: "Sorry, there was an error fetching your password!")
-        alertController = self.addAlertControllerAction(alertController, isErrorAlert: true)
+        alertController = addAlertControllerAction(alertController, isErrorAlert: true)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
