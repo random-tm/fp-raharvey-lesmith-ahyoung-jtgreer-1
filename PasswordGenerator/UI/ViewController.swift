@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
+    private var shouldGenerateSecurePassword: Bool = true
     
     @IBOutlet weak private var secureButton: BorderedButton!
     @IBOutlet weak private var memorableButton: BorderedButton!
@@ -94,17 +95,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func secureButtonPushed() -> Void {
-        generatePasswordIfAble(isSecure: true)
+        self.shouldGenerateSecurePassword = true
+        generatePasswordIfAble()
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        generatePasswordIfAble(isSecure: false)
+        self.shouldGenerateSecurePassword = false
+        generatePasswordIfAble()
     }
     
-    private func generatePasswordIfAble(isSecure isSecure: Bool) -> Void {
+    private func generatePasswordIfAble() -> Void {
         if(self.passwordLengthInput.numberIsValid() && lengthIsWithinLimits(self.passwordLengthInput.number())) {
             updateUI()
-            generatePassword(isSecure: isSecure)
+            generatePassword()
         } else {
             highlightNumberLimits()
         }
@@ -125,8 +128,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         unhighlightNumberLimits()
     }
     
-    private func generatePassword(isSecure isSecure: Bool) -> Void {
-        if(isSecure) {
+    private func generatePassword() -> Void {
+        if(shouldGenerateSecurePassword) {
             generateSecurePassword()
         } else {
             generateMemorablePassword()
