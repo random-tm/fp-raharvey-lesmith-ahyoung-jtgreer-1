@@ -11,16 +11,18 @@ import UIKit
 
 class LengthInputTextField: UITextField {
     
-    var numberValue: Int = 12
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.keyboardType = UIKeyboardType.NumberPad
     }
     
+    func numberValue() -> Int! {
+        return Int(self.text!)
+    }
+    
     func numberIsValid() -> Bool {
-        if let number = Int(self.text!) {
-            self.numberValue = number
+        let number = numberValue()
+        if(number != nil) {
             return true
         } else {
             return false
