@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var labelDenotingGeneratedPassword: UILabel!
     @IBOutlet weak private var generatedPasswordLabel: UILabel!
-    private var shouldGenerateSecurePassword: Bool = true
     
     @IBOutlet weak private var secureButton: BorderedButton!
     @IBOutlet weak private var memorableButton: BorderedButton!
@@ -95,21 +94,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func secureButtonPushed() -> Void {
-        self.shouldGenerateSecurePassword = true
-        generatePasswordIfAble()
+        if(checkIfPasswordLengthIsValid()){
+            generateSecurePassword()
+            updateUI()
+        } else {
+            highlightNumberLimits()
+        }
     }
     
     @IBAction private func memorableButtonPushed() -> Void {
-        self.shouldGenerateSecurePassword = false
-        generatePasswordIfAble()
-    }
-    
-    private func generatePasswordIfAble() -> Void {
-        if(self.passwordLengthInput.numberIsValid() && lengthIsWithinLimits(self.passwordLengthInput.number())) {
+        if(checkIfPasswordLengthIsValid()){
+            generateMemorablePassword()
             updateUI()
-            generatePassword()
         } else {
             highlightNumberLimits()
+        }
+    }
+    
+    private func checkIfPasswordLengthIsValid() -> Bool {
+        if(self.passwordLengthInput.numberIsValid() && lengthIsWithinLimits(self.passwordLengthInput.number())) {
+            return true
+        } else {
+            return false
         }
     }
     
@@ -126,14 +132,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.passwordLengthInput.resignFirstResponder()
         showCopyButtonAndPasswordLabel()
         unhighlightNumberLimits()
-    }
-    
-    private func generatePassword() -> Void {
-        if(shouldGenerateSecurePassword) {
-            generateSecurePassword()
-        } else {
-            generateMemorablePassword()
-        }
     }
     
     private func generateSecurePassword() -> Void {
